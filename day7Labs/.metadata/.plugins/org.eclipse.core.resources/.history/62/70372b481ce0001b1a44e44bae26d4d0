@@ -1,0 +1,13 @@
+package com.example.text;
+
+import com.example.Person;
+
+public class TestPerson {
+	public static void main(String[] args) {
+		Person adam = new Person();
+	}
+}
+
+/*
+ * cannot be instanciated because Person is an abstract class
+ */

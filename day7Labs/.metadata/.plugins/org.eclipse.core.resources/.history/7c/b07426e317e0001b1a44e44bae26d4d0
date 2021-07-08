@@ -1,0 +1,5 @@
+package com.alec.model;
+
+public class FlyingVehicle {
+
+}

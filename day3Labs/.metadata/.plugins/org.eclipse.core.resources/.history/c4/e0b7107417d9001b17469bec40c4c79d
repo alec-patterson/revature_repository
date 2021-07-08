@@ -1,0 +1,11 @@
+
+public class StringConcatenation {
+	public static void main(String[] args) {
+		String beginning = "Hello";
+		
+		String end = " World";
+		String combo = beginning + end;
+		
+		System.out.println(combo);
+	}
+}

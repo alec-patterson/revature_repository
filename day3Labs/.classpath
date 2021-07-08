@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CastingDatatypes/src"/>
+	<classpathentry kind="src" path="editCompileExecute/src"/>
+	<classpathentry kind="src" path="Lab_StringConcatenation/src"/>
+	<classpathentry kind="src" path="Lab-ConditionalBlocks/src"/>
+	<classpathentry kind="src" path="Lab-ConditionalStatements/src"/>
+	<classpathentry kind="src" path="Lab-Datatypes/src"/>
+	<classpathentry kind="src" path="Lab-MathematicalOperators/src"/>
+	<classpathentry kind="src" path="Lab-Switch/src"/>
+	<classpathentry kind="src" path="NameConsole/src"/>
+	<classpathentry kind="output" path="CastingDatatypes/bin"/>
+</classpath>

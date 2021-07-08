@@ -1,0 +1,30 @@
+package dogSim;
+
+public class dogSim {
+	public static void main(String[] args) {
+		dog d = new dog("queenie", 13);
+		System.out.println(d);
+	}
+}
+
+class dog {
+	String name;
+	int age;
+	
+	public dog(String n, int a) {
+		name = n;
+		age = a;
+	}
+	
+	public void bark() {
+		System.out.println("Woof Woof");
+	}
+	
+	public String toString() {
+		return "Name: " + name + "\nAge: " + age;
+	}
+	
+	public void getInfo() {
+		System.out.printf("%-10s %s\n%-10s %d", "Name:", name, "Age:", age);
+	}
+}

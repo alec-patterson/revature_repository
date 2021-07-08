@@ -1,0 +1,18 @@
+package com.example.test;
+
+import com.example.model.Whale;
+import com.example.model.Swimmer;
+
+public class TestSwimmer {
+	public static void main(String[] args) {
+		Swimmer beluga;
+		beluga = new Whale();
+		beluga.swim();
+		beluga.dive();
+	}
+}
+
+/*
+ * we can assign an instance of Whale to variable Swimmer
+ * because whale implements swimmer. There is a IS-A relationship
+ */

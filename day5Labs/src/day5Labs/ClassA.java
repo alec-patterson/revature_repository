@@ -1,0 +1,14 @@
+package day5Labs;
+
+// Day 5 Lab: Writing Composite Classes
+public class ClassA {
+	String name = "name";
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+}

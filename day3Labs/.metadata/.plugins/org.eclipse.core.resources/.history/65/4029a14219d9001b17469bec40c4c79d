@@ -1,0 +1,18 @@
+
+public class ConditionalBlocks {
+	public static void main(String[] args) {
+		boolean b = false;
+		if (b) {
+			System.out.println("inside the if-statement");
+		}
+		
+		b = true;
+		if (b) {
+			System.out.println("inside the second if-statement");
+		}
+		
+		
+		System.out.println("outside the if-statement");
+	}
+
+}
