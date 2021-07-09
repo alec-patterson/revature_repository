@@ -5,6 +5,9 @@ import fixtures.Room;
 public class Player {
 	private Room currentRoom;
 	
+	/*
+	 * Player class holds the room you are currently in
+	 */
 	public Player(Room currentRoom) {
 		this.currentRoom = currentRoom;
 	}

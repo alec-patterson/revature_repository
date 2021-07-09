@@ -19,13 +19,20 @@ public class Main {
 		Input.sc.close();
 	}
 	
+	/*
+	 * Prints the information regarding the current room:
+	 * 	Room Name
+	 * 	Long Description of current room
+	 * 	List of all available exits and their short Descriptions
+	 * 	List of all interactable items
+	 */
 	private static void printRoom(Player player) {
 		System.out.println(player.getCurrentRoom().name + "\n");
 		System.out.println(player.getCurrentRoom().longDescription + "\n");
 		System.out.println("Exits");
 		Room[] exit = player.getCurrentRoom().getExits();
 		for(int i = 0; i < exit.length; i++) {
-			String direction = "north";
+			String direction = "";
 			if(i == 0)
 				direction = "north";
 			if(i == 1)
@@ -38,9 +45,16 @@ public class Main {
 			if(exit[i] != null) {
 				System.out.println(direction + ": " + exit[i].shortDescription);
 			}
+			
+				
+		}
+		
+		System.out.println("\nInteractables:");
+		for(int i = 0; i < player.getCurrentRoom().getItems().length; i++) {
+			if(player.getCurrentRoom().findItem(i) != null)
+				System.out.println(player.getCurrentRoom().findItem(i).name);
 		}
 		System.out.print("\n> ");
 	}
-	
 	
 }

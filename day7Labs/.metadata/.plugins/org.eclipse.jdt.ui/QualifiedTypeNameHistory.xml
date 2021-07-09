@@ -3,4 +3,6 @@
     <fullyQualifiedTypeName name="com.example.model.ActionFigure"/>
     <fullyQualifiedTypeName name="com.example.Person"/>
     <fullyQualifiedTypeName name="com.example.model.Mammal"/>
+    <fullyQualifiedTypeName name="com.alec.model.FlyingVehicle"/>
+    <fullyQualifiedTypeName name="com.example.Developer"/>
 </qualifiedTypeNameHistroy>

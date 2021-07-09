@@ -1,11 +1,25 @@
 package game;
 
+import fixtures.Books;
+import fixtures.Lights;
+import fixtures.Opener;
 import fixtures.Room;
+import fixtures.Sinks;
+import fixtures.Swimming;
 
 public class RoomManager {
 	public Room startingRoom;
 	public Room[] rooms;
 	public void init() {
+		
+		/*
+		 * Initialization of the all the rooms in the house
+		 * 
+		 * provided information to constructor:
+		 * 	Name of room
+		 * 	Short description of the room
+		 * 	long description of the room
+		 */
 		Room family = new Room("Family Room", "Comfortable seating area to relax", "Large area to spend time with your family with.\n"
 				+ "Includes a T.V., various couches, and a coffee table.\n"
 				+ "has access to the garage, the downstairs bedroom, and\n"
@@ -39,9 +53,9 @@ public class RoomManager {
 				+ "The Bathroom is connected to the North Bedroom to the west. ");
 		
 		Room loft = new Room("Upstairs Loft", "Large loft upstairs", "The upstairs loft is equipped with an L couch, and home entertainment system.\n"
-				+ "As well as a large space between rooms for the children to play.\n "
+				+ "As well as a large space between rooms for the children to play.\n"
 				+ "The loft has access to two bedrroms to the north and the east.\n"
-				+ "As well as the laundry room to the south. ");
+				+ "The laundry room to the south, and to the west is the staircase back to the family room. ");
 		Room bedroom2 = new Room("North upstairs bedroom", "North upstairs bedroom", "Much like the downstairs bedroom it is a small space but has enough room for essentials:\n"
 				+ "Bed, dresser, T.V., and nightstand. The room comes with a closet is connected to a bathroom to the east. \n"
 				+ "Unlike the downstairs bedroom this bathroom is also shared with the east bedroom.\n"
@@ -68,6 +82,16 @@ public class RoomManager {
 				+ "It is connected to the master bathroom to the west\n"
 				+ "As well as the loft to the north.");
 		
+		/*
+		 * Setting all the exits of the rooms
+		 * Availible exits are :
+		 * 	North: 0
+		 * 	East: 1
+		 * 	South: 2
+		 * 	West: 3
+		 * 
+		 * If an exit is null then it has no where to go in that direction
+		 */
 		Room[] setExits = family.getExits();
 		setExits[0] = bedroom1;
 		setExits[1] = loft;
@@ -126,7 +150,7 @@ public class RoomManager {
 		setExits[0] = bedroom2;
 		setExits[1] = bedroom3;
 		setExits[2] = laundry;
-		setExits[3] = null;
+		setExits[3] = family;
 		
 		setExits = bedroom2.getExits();
 		setExits[0] = null;
@@ -170,6 +194,50 @@ public class RoomManager {
 		setExits[2] = null;
 		setExits[3] = masterBathroom;
 		
+		/*
+		 * This section adds possible interactions for each room
+		 */
+		garage.addItems(new Opener(garage, driveway));
+		garage.addItems(new Lights("Garage"));
+		
+		family.addItems(new Books("The Chronicles of Narnia"));
+		family.addItems(new Lights("Family Room"));
+	
+		kitchen.addItems(new Lights("Kitchen"));
+		kitchen.addItems(new Books("Cooking for Dummies"));
+		kitchen.addItems(new Sinks("Kitchen"));
+		
+		pantry.addItems(new Lights("Pantry"));
+		
+		diningRoom.addItems(new Lights("Dining Room"));
+		
+		backyard.addItems(new Lights("Backyard"));
+		backyard.addItems(new Swimming(backyard.getExits()));
+		
+		bedroom1.addItems(new Lights("Downstairs Bedroom"));
+		
+		bathroom1.addItems(new Lights("Downstairs Bathroom"));
+		bathroom1.addItems(new Sinks("Downstairs Bathroom"));
+		
+		loft.addItems(new Lights("Upstairs Loft"));
+		
+		bedroom2.addItems(new Lights("North Bedroom"));
+		
+		bedroom3.addItems(new Lights("East Bedroom"));
+		
+		bathroom2.addItems(new Lights("Upstairs Bathroom"));
+		bathroom2.addItems(new Sinks("Upstairs Bathroom"));
+		
+		masterBedroom.addItems(new Lights("Master Bedroom"));
+		
+		masterBathroom.addItems(new Lights("Master Bathroom"));
+		masterBathroom.addItems(new Sinks("Master Bathroom+"));
+		
+		laundry.addItems(new Lights("Laundry Room"));
+		
+		/*
+		 * sets all the rooms to the Room[] array
+		 */
 		rooms = new Room[17];
 		rooms[0] = family;
 		rooms[1] = garage;
@@ -189,6 +257,7 @@ public class RoomManager {
 		rooms[15] = balcony;
 		rooms[16] = laundry;
 		
+		// starting room is set to the family room+
 		startingRoom = family;
 		
 				
