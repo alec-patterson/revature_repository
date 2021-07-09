@@ -27,7 +27,7 @@ public class RoomManager {
 		Room garage = new Room("Garage", "2 car garage", "The garage is a large two car space holding both your Ferrari,\n"
 				+ "and two smart cars (because two can fit in one spot),\n"
 				+ "The garage has access to the driveway when the garage door is open\n"
-				+ "as wellas the kitchen and family room.");
+				+ "as well as the kitchen and family room.");
 		Room kitchen = new Room("Kitchen", "It's a kitchen", "Large kitchen with all the appliances you can think of.\n"
 				+ "Like a refigerator, stove, oven, microwave and sink.\n"
 				+ "Kitchen has access to the pantry to the north\n"
