@@ -1,0 +1,12 @@
+delete from user_information where name = 'Alec Patterson';
+delete from user_login where username = 'ajp';
+
+alter sequence user_id_seq restart with 1;
+
+
+insert into user_login (username, email, "password") values ('ajp', 'ajp@gmail.com', 'projectzero');
+insert into user_information (customer_id, name, birthday, datejoined, address, city, zipcode, state, pendingapproval, checking, saving, "role") values ((select id from user_login where username = 'ajp'), 'Alec Patterson', to_date('01/27/1998', 'MM/DD/YYYY'), to_date('07/21/2021', 'MM/DD/YYYY'), '2334 main st.', 'Las Vegas', '234352', 'NV', false, 0, 0, 'admin');
+
+
+select * from user_login ul ;
+select * from user_information ui ;

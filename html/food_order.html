@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+    <title>Food Order</title>
+
+    <head>
+        <strong>Order Form</strong>
+    </head>
+
+    <form>
+        <label for="cuisine">Select Cuisine:</label>
+        <select name="cuisine" id="country">
+            <option value="none" selected disabled hidden>Select an Option</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Italian">Italian</option>
+        </select>
+    </form>
+
+    <form>
+        <input type="checkbox" name = "Appetizer" id ="app"/>
+        <label for="app">Appetizer</label>
+        <input type="checkbox" name = "Meal" id ="meal"/>
+        <label for="meal">Meal</label>
+    </form>
+
+    <form>
+        <input type="button" name="MenuItem" id="wrap"/>
+        <label for="wrap">Wrap</label>
+        <input type=number id="wraps" min=0>
+
+    </form>
+
+    <form>
+        <input type="button" name="MenuItem" id="quesedilla"/>
+        <label for="quesedilla">Quesedilla</label>
+        <input type=number id="quesedillas" min=0>
+    </form>
+
+    <form>
+        <input type="submit" value="Place Order"> 
+    </form>
+
+</html>

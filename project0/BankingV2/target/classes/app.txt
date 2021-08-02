@@ -1,0 +1,181 @@
+2021-08-01 17:03:54,435 INFO a.App [main] Starting application....
+2021-08-01 17:03:54,438 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 17:04:01,331 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 17:04:01,331 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 17:04:08,533 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 17:04:08,890 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 17:04:08,890 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-01 17:04:08,891 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-01 17:04:08,894 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-01 17:04:08,899 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-01 17:04:08,899 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-01 17:04:10,252 INFO a.EmployeeServices [main] Getting Employee personal information
+2021-08-01 17:04:10,253 INFO a.EmployeeServices [main] Prompting Employee if They want to update their Personal Information
+2021-08-01 17:04:15,047 INFO a.EmployeeServices [main] Getting Employee Bank Information
+2021-08-01 17:04:15,048 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-01 17:04:22,010 INFO a.EmployeeServices [main] Checking if accounts need to be approved
+2021-08-01 17:04:22,011 WARN c.p.EmployeeDAO [main] Getting accounts that need approval
+2021-08-01 17:04:27,893 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 17:04:29,626 INFO a.App [main] Exiting application
+2021-08-01 20:23:45,201 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:23:45,205 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:23:45,207 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:23:45,208 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:24:43,249 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:24:43,253 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:24:43,255 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:24:43,256 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:25:57,889 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:25:57,894 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:25:57,896 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:25:57,897 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:27:04,128 INFO a.App [main] Starting application....
+2021-08-01 20:27:04,130 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 20:27:08,093 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:27:08,093 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 20:28:26,122 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:26,127 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:26,128 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:26,129 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:40,506 INFO c.p.EmployeeDAO [main] Getting Customer Infomation
+2021-08-01 20:28:40,906 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:40,906 INFO c.p.ApplicationDAO [main] Accessing Database to check if Email is Unique
+2021-08-01 20:28:40,908 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:40,908 INFO c.p.ApplicationDAO [main] Accessing Database to check if State is correct
+2021-08-01 20:28:40,909 INFO c.p.EmployeeDAO [main] checking if Account is already an Employee
+2021-08-01 20:28:40,913 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-01 20:28:40,915 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:40,915 INFO c.p.ApplicationDAO [main] Accessing Database to check if Username is Unique
+2021-08-01 20:28:40,916 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-01 20:28:40,942 WARN c.p.EmployeeDAO [main] Issue Accessing Database
+2021-08-01 20:28:40,943 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:28:40,944 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 20:28:40,945 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-01 20:28:40,946 INFO c.p.CustomerDAO [main] Accessing DataBase for Password Update
+2021-08-01 20:33:47,540 INFO c.p.EmployeeDAO [main] Getting Customer Infomation
+2021-08-01 20:33:47,953 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:33:47,954 INFO c.p.ApplicationDAO [main] Accessing Database to check if Email is Unique
+2021-08-01 20:33:47,955 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:33:47,955 INFO c.p.ApplicationDAO [main] Accessing Database to check if State is correct
+2021-08-01 20:33:47,956 INFO c.p.EmployeeDAO [main] checking if Account is already an Employee
+2021-08-01 20:33:47,957 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-01 20:33:47,958 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:33:47,959 INFO c.p.ApplicationDAO [main] Accessing Database to check if Username is Unique
+2021-08-01 20:33:47,960 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-01 20:33:47,964 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:33:47,964 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 20:33:47,965 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-01 20:33:47,967 INFO c.p.CustomerDAO [main] Accessing DataBase for Password Update
+2021-08-01 20:34:16,680 INFO c.p.EmployeeDAO [main] Getting Customer Infomation
+2021-08-01 20:34:17,083 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:34:17,084 INFO c.p.ApplicationDAO [main] Accessing Database to check if Email is Unique
+2021-08-01 20:34:17,084 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:34:17,085 INFO c.p.ApplicationDAO [main] Accessing Database to check if State is correct
+2021-08-01 20:34:17,086 INFO c.p.EmployeeDAO [main] checking if Account is already an Employee
+2021-08-01 20:34:17,088 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-01 20:34:17,090 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:34:17,090 INFO c.p.ApplicationDAO [main] Accessing Database to check if Username is Unique
+2021-08-01 20:34:17,091 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-01 20:34:17,093 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 20:34:17,093 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 20:34:17,094 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-01 20:34:17,096 INFO c.p.CustomerDAO [main] Accessing DataBase for Password Update
+2021-08-01 22:17:26,205 INFO a.App [main] Starting application....
+2021-08-01 22:17:26,207 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 22:17:27,585 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 22:17:27,585 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 22:17:37,824 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 22:17:38,191 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 22:17:38,192 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-01 22:17:38,192 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-01 22:17:38,196 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-01 22:17:38,201 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-01 22:17:38,201 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-01 22:18:21,967 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 22:18:23,131 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 22:18:23,131 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 22:18:27,476 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 22:18:27,477 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 22:18:27,477 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 22:18:27,477 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 22:18:27,477 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 22:18:27,477 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 22:18:27,477 INFO a.ApplicationHandler [main] Incorrect login returning to menu
+2021-08-01 22:18:27,478 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 22:18:28,624 INFO a.App [main] Exiting application
+2021-08-01 23:40:13,036 INFO a.App [main] Starting application....
+2021-08-01 23:40:13,038 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 23:40:15,962 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:40:15,962 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 23:40:22,567 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:40:22,935 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 23:40:22,935 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-01 23:40:22,936 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-01 23:40:22,939 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-01 23:40:22,943 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-01 23:40:22,943 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-01 23:40:25,040 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 23:40:25,639 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:40:25,639 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 23:40:28,581 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:40:28,582 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 23:40:28,582 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-01 23:40:28,582 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-01 23:40:28,582 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-01 23:40:28,584 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-01 23:40:28,584 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-01 23:45:23,481 INFO c.p.EmployeeDAO [main] Getting Customer Infomation
+2021-08-01 23:45:23,875 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:23,875 INFO c.p.ApplicationDAO [main] Accessing Database to check if Email is Unique
+2021-08-01 23:45:23,876 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:23,876 INFO c.p.ApplicationDAO [main] Accessing Database to check if State is correct
+2021-08-01 23:45:23,877 INFO c.p.EmployeeDAO [main] checking if Account is already an Employee
+2021-08-01 23:45:23,878 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-01 23:45:23,880 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:23,880 INFO c.p.ApplicationDAO [main] Accessing Database to check if Username is Unique
+2021-08-01 23:45:23,881 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-01 23:45:23,883 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:23,883 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:45:23,884 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-01 23:45:33,557 INFO a.App [main] Starting application....
+2021-08-01 23:45:33,560 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 23:45:34,908 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:34,909 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 23:45:42,358 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:45:42,713 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 23:45:42,713 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-01 23:45:42,714 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-01 23:45:42,718 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-01 23:45:42,720 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-01 23:45:42,720 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-01 23:45:44,822 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 23:45:47,005 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:47,006 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 23:45:54,502 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:45:54,503 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 23:45:54,503 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-01 23:45:54,503 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-01 23:45:54,503 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-01 23:45:54,504 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-01 23:45:54,504 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-01 23:45:57,096 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 23:45:58,577 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:45:58,577 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-01 23:46:03,719 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:46:03,720 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-01 23:46:03,720 INFO a.ApplicationHandler [main] Incorrect login returning to menu
+2021-08-01 23:46:03,720 INFO a.ApplicationHandler [main] At login menu
+2021-08-01 23:54:38,448 INFO c.p.EmployeeDAO [main] Getting Customer Infomation
+2021-08-01 23:54:38,811 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:54:38,811 INFO c.p.ApplicationDAO [main] Accessing Database to check if Email is Unique
+2021-08-01 23:54:38,812 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:54:38,812 INFO c.p.ApplicationDAO [main] Accessing Database to check if State is correct
+2021-08-01 23:54:38,813 INFO c.p.EmployeeDAO [main] checking if Account is already an Employee
+2021-08-01 23:54:38,814 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-01 23:54:38,815 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:54:38,816 INFO c.p.ApplicationDAO [main] Accessing Database to check if Username is Unique
+2021-08-01 23:54:38,816 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-01 23:54:38,818 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-01 23:54:38,818 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-01 23:54:38,819 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-01 23:54:38,820 INFO c.p.EmployeeDAO [main] Getting accounts that need approval

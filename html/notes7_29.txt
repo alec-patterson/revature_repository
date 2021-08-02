@@ -1,0 +1,105 @@
+JDBC
+
+// get connection with the DB configureation (URL, username and password)
+
+// get statement (PreparedStatement or CallableStatement)
+
+// *** >> create SQL query (specific to Postgres/MySQL/Oracle...)
+SELECT name, age gender, location from Employee WHERE name LIKE 'A%;
+
+// querying - ResultSet (iterate thru)
+// *** >> build java object to return to caller
+
+// insert/update/delete - executeUpdate
+// *** >> return some object or dont return anything 
+
+// close connection
+
+==== >>>>
+
+Java application
+
+Objects (Pojos - Employee)
+Database (Tables - EMPLOYEE)
+
+Framework - Hibernate - ORM Framework
+
+Object Relational Mapping
+
+handle the connection congfiguration
+build query for the database in the (Dialact)
+mapping the query results to objects
+
+
+
+
+=> Hibernate and JPA
+
+Java Persistence Architecture Specification
+
+API 
+EntityManager
+Entity
+
+==>>>
+
+class Employee {
+    private String name;
+    private String gender;
+    private int age;
+    // constructors
+    // getter and setters
+}
+
+Employee e = new Employee("Mike", 40, "M");
+
+// have a mapping of object property with table column
+
+Employee -> EMPLOYEE
+name -> FULL_NAME
+gender -> SEX
+age -> OLD
+
+// configureation of DB and mapping
+XML
+db url 
+db usr and password
+
+hibernate.cfg.eml
+
+// Hibernate session
+Session session = 
+
+SELECT * from EMPLOYEE where id = ?;
+session.get(Employee.class, 21);
+
+// attached to the session, persistent object
+
+session.save(e);
+
+// hibernate creates SQL with INSERT
+//executes
+
+// data into table 
+
+
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>3.6.10.Final</version>
+</dependency>
+<dependency>
+	<groupId>javassist</groupId>
+	<artifactId>javassist</artifactId>
+	<version>3.12.1.GA</version>
+</dependency>
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-simple</artifactId>
+	<version>1.7.21</version>
+</dependency>
+<dependency>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
+	<version>42.2.23</version>
+</dependency>

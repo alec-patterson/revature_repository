@@ -1,0 +1,54 @@
+CSS
+
+div {
+
+}
+
+
+Element selector
+    class selector (.) - .product
+    Id Selector (#) - #product-1
+    Pseudo selectors
+
+    <div id="product-1" class="product">
+    <input type="text" name="username">
+
+Box Model
+    padding - b/n content and border (creates space between the text and a box.)
+    margin - b/n outside border  (creates a secondary outline)
+
+Responsive Web Design
+
+    <meta> - width = device-width
+
+    @media screen () {
+
+        body {
+
+        }
+
+    }
+
+Bootstrap
+    rows & cols - grid system
+    breakpoints - sm, m, lg, xl - col-sm-2
+
+    <div p-2 pt-2 m-2>      (p: padding, pt: padding top, m: margin)
+
+    padding
+
+Servlet
+    Servlet Container - initializes the servlets and having them ready for requests
+    Tomcat - application server, which has servlet Container
+
+    Servlets are java classes that extends httpServlet or GenericServlet
+
+    Lifecycle of Servlet
+        start - init()
+        process - service()
+        end - destroy()
+
+    HttpServlet:
+        doGet()
+        doPost()
+        doPut()
