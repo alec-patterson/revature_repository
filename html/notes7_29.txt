@@ -82,6 +82,8 @@ session.save(e);
 
 // data into table 
 
+***********************
+pom.xml
 
 <dependency>
 	<groupId>org.hibernate</groupId>
@@ -103,3 +105,67 @@ session.save(e);
 	<artifactId>postgresql</artifactId>
 	<version>42.2.23</version>
 </dependency>
+
+**************************
+Employee.hbm.xml
+
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>3.6.10.Final</version>
+</dependency>
+<dependency>
+	<groupId>javassist</groupId>
+	<artifactId>javassist</artifactId>
+	<version>3.12.1.GA</version>
+</dependency>
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-simple</artifactId>
+	<version>1.7.21</version>
+</dependency>
+<dependency>
+	<groupId>org.postgresql</groupId>
+	<artifactId>postgresql</artifactId>
+	<version>42.2.23</version>
+</dependency>
+
+**************************
+hibernate.cfg.xml
+
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   	<session-factory>
+		<!-- org.hibernate.dialect.MySQLDialect -->
+    	<property name = "hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+      	<!-- com.mysql.jdbc.Driver -->
+      	<property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
+		
+      	<property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+      	<property name = "hibernate.connection.username">postgres</property>
+      	<property name = "hibernate.connection.password">postgres</property>
+      	
+      	<!-- List of XML mapping files -->
+      	<mapping resource = "Employee.hbm.xml"/>
+		
+   </session-factory>
+</hibernate-configuration>
+
+*****************************
+Main.java
+
+//SessionFactory from Configuration
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		//Session
+		Session session = factory.openSession();
+		
+		//use session for querying and other operations
+		Employee emp = (Employee) session.get(Employee.class, 1);
+		System.out.println(emp.getId());
+		System.out.println(emp.getName());
+		System.out.println(emp.getGender());
+		
+		session.close();

@@ -1,0 +1,139 @@
+Linking Primary key and foreign key (One-to-one)
+
+
+Overwview:
+
+You must store a reference between the two objects you want to join
+
+In the object with the primary key add:
+
+@OneToOne (mappedBy = "name of reference to this object in Foreign key object")
+private ForeignKeyObject obj;
+
+Make a setter for this variable
+
+
+
+In the object with the Foreign Key add
+@OneToOne
+@JoinColumn(name = "name of foreign key column in table")
+private PrimaryKeyObject obj;
+
+Make a setter for this variable
+
+
+Where ever you create your objects to insert into the data base just make sure you use the setters to create that link between the two
+
+
+
+
+
+
+***************************************************************************************************************
+Example:
+
+
+
+
+My database:
+
+Table: login_information {
+
+id: serial				// Primary Key
+email: varchar
+password: varchar
+
+}
+
+
+Table: employee_information {
+
+employee_id: serial		// Primary Key
+login_id: int			// Foreign Key
+role: varchar
+
+}
+
+
+
+
+***************************************************************************************************************
+
+
+
+
+Hibernate files:
+
+loginInfo.java 			
+
+EmployeeInfo.java
+
+
+* These files are where my values are mapped that will be inserted into the table
+
+* A link must be made between the two that will will connect the primary key and the foreign key
+
+* We need to create a reference to the other object from within both of these
+
+
+
+
+In loginInfo create:	(Has Primary Key you want)
+
+
+@OneToOne(mappedBy = "login")			<-- mappedBy = "login" says that its primary key will go to login in the EmployeeInfo
+private EmployeeInfo employee;		
+
+public void setEmployeeInfo(EmployeeInfo employee) {
+	this.employee = employee
+}
+
+^^ these will store in an object of EmployeeInfo (object that has the foreign key)
+
+
+
+
+
+
+In EmployeeInfo create:		(Has Foreign Key you want to set)
+
+@OneToOne
+@JoinColumn (name = "login_id")		<-- JoinColumn will join the primary key of login to the column login_id in the employee_information table
+private LoginInfo login;
+
+public void setLoginInfo(LoginInfo login) {
+	this.login = login;
+}
+
+^^ these will store in an object of LoginInfo (object that has the foreign key)
+
+
+
+
+
+
+***************************************************************************************************************
+
+
+
+
+
+
+In the file you create your LoginInfo and EmployeeInfo:
+
+LoginInfo l = new LoginInfo("email", "password");
+EmployeeInfo e = new EmployeeInfo("role");
+
+l.setEmployeeInfo(e);
+e.setLoginInfo(l);
+
+^^ 'e' will have a reference to 'l' and 'l' will have a reference to 'e' the annotations will map the primary key of 'l' to the foreign key of 'e'
+
+
+
+
+
+
+
+
+

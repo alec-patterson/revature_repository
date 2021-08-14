@@ -1,0 +1,16 @@
+<div id="parent">
+    <form id="login" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h1>Employee Login</h1>
+        <div *ngIf="invalid === true">Invalid Email/Password</div>
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" required ngModel>
+        <br>
+        <br>
+        <label for="password">Password: </label>
+        <input id="password" type="password" name="password" required ngModel>
+        <br>
+        <br>
+        <button type="submit" [disabled]="!f.valid">Login</button>
+        <a href="createNewAccount" style="margin-left: 25px;">Create New Account</a>
+    </form>
+</div>

@@ -179,3 +179,5 @@
 2021-08-01 23:54:38,818 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
 2021-08-01 23:54:38,819 INFO c.p.CustomerDAO [main] Getting User Account Information
 2021-08-01 23:54:38,820 INFO c.p.EmployeeDAO [main] Getting accounts that need approval
+2021-08-02 00:57:17,359 INFO a.App [main] Starting application....
+2021-08-02 00:57:17,361 INFO a.ApplicationHandler [main] At login menu

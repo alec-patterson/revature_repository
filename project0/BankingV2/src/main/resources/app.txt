@@ -179,3 +179,100 @@
 2021-08-01 23:54:38,818 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
 2021-08-01 23:54:38,819 INFO c.p.CustomerDAO [main] Getting User Account Information
 2021-08-01 23:54:38,820 INFO c.p.EmployeeDAO [main] Getting accounts that need approval
+2021-08-02 00:57:17,359 INFO a.App [main] Starting application....
+2021-08-02 00:57:17,361 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 01:25:00,409 INFO a.App [main] Starting application....
+2021-08-02 01:25:00,412 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 01:25:05,476 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-02 01:25:05,477 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-02 01:25:12,324 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-02 01:25:12,660 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-02 01:25:12,660 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-02 01:25:12,661 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-02 01:25:12,663 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-02 01:25:12,666 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-02 01:25:12,666 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-02 01:25:16,215 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 01:25:17,998 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-02 01:25:17,998 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-02 01:25:21,213 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-02 01:25:21,214 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-02 01:25:21,214 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-02 01:25:21,215 INFO a.CustomerHandler [main] Initializing CustomerHandler variables
+2021-08-02 01:25:21,216 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-02 01:25:21,216 INFO a.CustomerHandler [main] Starting Customer Interface
+2021-08-02 01:25:24,088 INFO a.CustomerHandler [main] Invalid option entered for Customer Interface
+2021-08-02 01:25:28,067 INFO a.CustomerHandler [main] User logging out of account
+2021-08-02 01:25:28,067 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 01:25:29,779 INFO a.App [main] Exiting application
+2021-08-02 07:31:15,702 INFO a.App [main] Starting application....
+2021-08-02 07:31:15,705 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 07:31:21,287 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-02 07:31:21,287 INFO a.ApplicationHandler [main] User Applying for a new Account
+2021-08-02 07:31:29,550 INFO a.ApplicationHandler [main] Prompting User to Enter Username
+2021-08-02 07:31:44,545 INFO c.p.ApplicationDAO [main] Accessing Database to check if Username is Unique
+2021-08-02 07:31:44,896 INFO a.ApplicationHandler [main] Prompting User to Enter Email
+2021-08-02 07:31:52,419 INFO c.p.ApplicationDAO [main] Accessing Database to check if Email is Unique
+2021-08-02 07:31:52,420 INFO a.ApplicationHandler [main] Prompting User to Enter Password
+2021-08-02 07:32:16,640 INFO a.ApplicationHandler [main] Prompting User to Enter their State
+2021-08-02 07:32:18,973 INFO c.p.ApplicationDAO [main] Accessing Database to check if State is correct
+2021-08-02 07:32:25,220 INFO c.p.ApplicationDAO [main] Accessing Database to add a new User
+2021-08-02 07:32:25,236 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 07:32:27,276 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-02 07:32:27,276 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-02 07:32:32,292 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-02 07:32:32,293 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-02 07:32:32,293 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 08:25:47,876 INFO a.App [main] Starting application....
+2021-08-02 08:25:47,879 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 08:25:59,280 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-02 08:25:59,280 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-02 08:26:11,447 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-02 08:26:11,813 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-02 08:26:11,813 INFO a.ApplicationHandler [main] Incorrect login returning to menu
+2021-08-02 08:26:11,813 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 08:26:19,414 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-02 08:26:23,124 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-02 08:26:23,125 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-02 08:26:23,125 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-02 08:26:23,125 INFO a.CustomerHandler [main] Initializing CustomerHandler variables
+2021-08-02 08:26:23,128 INFO c.p.CustomerDAO [main] Getting User Account Information
+2021-08-02 08:26:23,129 INFO a.CustomerHandler [main] Starting Customer Interface
+2021-08-02 08:26:37,525 INFO a.CustomerServices [main] Printing Customer information
+2021-08-02 08:26:37,525 INFO a.CustomerServices [main] Prompting User if They want to update their Personal Information
+2021-08-02 08:27:16,159 INFO c.p.CustomerDAO [main] Accessing Database to Update Password
+2021-08-02 08:27:21,588 INFO a.CustomerServices [main] Printing Customer Bank Infomation
+2021-08-02 08:27:21,589 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-02 08:27:53,108 INFO a.CustomerServices [main] Entering Transaction Menu
+2021-08-02 08:27:59,710 INFO a.CustomerServices [main] Entering Deposit
+2021-08-02 08:28:11,026 INFO c.p.CustomerDAO [main] Accessing Database to Deposit money into User Account
+2021-08-02 08:28:17,741 INFO a.CustomerServices [main] Printing Customer Bank Infomation
+2021-08-02 08:28:17,742 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-02 08:28:29,350 INFO a.CustomerHandler [main] User logging out of account
+2021-08-02 08:28:29,350 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 08:28:33,129 INFO c.p.ApplicationDAO [main] Setting up DataBase system name
+2021-08-02 08:28:33,129 INFO a.ApplicationHandler [main] Attempting to login
+2021-08-02 08:28:48,340 INFO c.p.ApplicationDAO [main] Accessing Database for Login Information
+2021-08-02 08:28:48,341 INFO a.ApplicationHandler [main] Checking User Credentials
+2021-08-02 08:28:48,341 INFO a.ApplicationHandler [main] User Login Successful
+2021-08-02 08:28:48,342 INFO a.EmployeeHandler [main] Initializing EmployeeHandler Variables
+2021-08-02 08:28:48,344 INFO c.p.EmployeeDAO [main] Getting info of Employee
+2021-08-02 08:28:48,345 INFO a.EmployeeHandler [main] Checking if Account is Employee or Admin
+2021-08-02 08:28:48,345 INFO a.EmployeeHandler [main] Starting Admin Interface
+2021-08-02 08:29:21,102 INFO a.EmployeeServices [main] Prompting Employee to enter username of customer they want to view
+2021-08-02 08:29:29,554 INFO c.p.EmployeeDAO [main] Getting Customer Infomation
+2021-08-02 08:29:29,556 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-02 08:29:40,987 INFO a.EmployeeServices [main] Prompting Admin to enter username of employee they want to view
+2021-08-02 08:29:49,446 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-02 08:29:49,448 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-02 08:30:06,240 INFO a.EmployeeServices [main] Checking if accounts need to be approved
+2021-08-02 08:30:06,240 INFO c.p.EmployeeDAO [main] Getting accounts that need approval
+2021-08-02 08:30:14,721 INFO c.p.EmployeeDAO [main] Approving Account
+2021-08-02 08:30:26,510 INFO a.EmployeeServices [main] Creating a new employee
+2021-08-02 08:30:55,635 INFO c.p.EmployeeDAO [main] checking if Account is already an Employee
+2021-08-02 08:31:01,114 WARN c.p.EmployeeDAO [main] Updating account to an Employee
+2021-08-02 08:31:05,986 INFO a.EmployeeServices [main] Prompting Admin to enter username of employee they want to view
+2021-08-02 08:31:08,535 INFO c.p.EmployeeDAO [main] Getting Customer Information
+2021-08-02 08:31:08,537 INFO c.p.CustomerDAO [main] Accessing Database to get User Transactions
+2021-08-02 08:31:17,356 INFO a.ApplicationHandler [main] At login menu
+2021-08-02 08:31:45,420 INFO a.App [main] Exiting application

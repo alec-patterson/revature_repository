@@ -1,0 +1,64 @@
+Software testing
+
+functional testing
+- test 
+
+Non functional testing
+- performance (no.requrests and speed)
+- security
+- accessibility
+
+
+
+Unit testing
+- testing individual components 
+
+component
+directive
+Service/class
+Pipe 
+Model/other classes
+
+========
+
+Test runner 
+
+Testing framework - Jasmine - BDD
+
+Testing module in Angular - TestBed 
+@angular/core/testing
+
+Testing scripts - this is hwat we have to write
+*.spec.ts
+
+=============================================================
+
+notfound.component.spec.ts
+
+// test case 1
+it('test case 1',()=> {
+    //test case
+
+    //assertion - true or false
+    var user = {}
+    expect(user).toBeTruthy()
+    
+})
+
+// test case 2
+it('test case 2',()=>{
+    expect(3).toBeGreaterThan(2)
+})
+
+
+
+describe('Sample',()=>{
+    it('test case 1',()=> {
+        var user = {}
+        expect(user).toBeTruthy()   
+    })
+
+    it('test case 2',()=>{
+        expect(3).toBeGreaterThan(2)
+    })
+})

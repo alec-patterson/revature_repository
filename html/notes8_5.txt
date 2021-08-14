@@ -1,0 +1,83 @@
+es6 - next generation Javascript
+let & const
+template literal - `string ${variable} string ${variables}`
+
+arrow functions
+
+const add = (a,b) => {
+    return a + b;
+}
+
+const add = a => a + b
+
+destructureing 
+array - var [month, date] = [3,6]
+object - var {name} = {name:'Mike"}
+
+spread & REST ...
+
+function print(...args) {
+    args[0]
+}
+
+print(2,5,6)
+
+var arr = ['sfds',5]
+
+var another = ['sdfssfds', ...arr]
+
+var addr = {city:'Cicago'}
+{name:'Mike', ...addr}
+
+async/await
+
+async function load {
+    try{
+        await fnReturningPromise()
+    }
+    catch (e) {
+
+    }
+}
+
+var name:string = 'Mike'
+
+function add (a:number, b:number) : number {
+
+}
+
+class Animal {
+    name:string
+    
+    constructor() {
+
+    }
+
+    getAge():string{
+
+    }
+}
+
+var a = new Animal()
+
+interface Vehicle {
+    name:string;
+    wheels?:number;
+}
+
+var v:Vehicle = {name:'some car', wheels:45}
+
+export default let message = 'sdfsdfs'
+
+export class Car {
+
+}
+
+import {Car} from './other'
+
+import a from './other'         //This is for default export
+
+Directives
+
+Attribute Directives
+Structural Directives

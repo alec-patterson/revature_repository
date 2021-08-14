@@ -1,0 +1,50 @@
+<!-- Hello {{ getTitle() }}
+
+<button [disabled]="inactive" (click)="sayHello()">Click</button>
+
+<img src="picture"/> -->
+
+<!-- [supplier]="supplier" -->
+
+
+<!-- <div style="border:2px dashed #888; padding:2em">
+  Hello {{title | uppercase}}
+
+   <app-product title="Chair" price="$700" [supplier]="supplier" (remove)="onRemoveProduct($event)"></app-product>
+  <app-product title="table" price="$50"></app-product> 
+
+  <div [ngStyle] = "{'background-color' : country === 'USA'?'green':'red'}">Footer</div>
+  <div [ngClass] = "['highlight','bold']">Footer</div>
+
+  <div *ngIf="addProduct; else noNeed">New Product</div>
+
+  <ng-template #noNeed>
+    <div>
+      Product Add is restricted
+    </div>
+  </ng-template>
+ 
+  <ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Grape</li>
+    <li>Strawberry</li>
+  </ul> 
+
+  <ol>
+    <li *ngFor="let v of vehicles; let i = index">{{i}} - {{v}}</li>
+  </ol>
+
+  <app-products></app-products>
+
+</div> -->
+<!-- 
+<app-signup></app-signup> -->
+<!-- <app-login></app-login> -->
+
+<ul>
+  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="home">Home</a></li>
+  <li routerLinkActive="active"><a [routerLink]="['catalog', '1']" [queryParams]="{category:'electronics'}">Catalog</a></li>
+</ul>
+
+<router-outlet></router-outlet>

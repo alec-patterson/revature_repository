@@ -1,0 +1,15 @@
+h2 {
+    color: red;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.bold {
+    font: bold;
+}
+
+.active {
+    background-color: blueviolet;
+}

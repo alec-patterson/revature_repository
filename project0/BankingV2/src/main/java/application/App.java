@@ -5,7 +5,7 @@ import org.apache.logging.log4j.*;
 
 /*
  * Main driver for the project
- * User will start here and start from ApplicationHandler wil be called to start the User Interface
+ * User will start here and start from ApplicationHandler will be called to start the User Interface
  */
 public class App {
 	private static final Logger logger = LogManager.getLogger(App.class.getName());

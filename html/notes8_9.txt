@@ -1,0 +1,136 @@
+Component Lifecycle
+
+Instantiation : constructor(){}     // The constructor of the component class gets executed 
+                                        first, before the execution of any other lifecycle hook
+                                        events. If we need to inject any dependencies into the 
+                                        component, then the constructor is the best place to do
+                                        so.
+Initialization : onOnInit(){}       // Called once to initialize the component and set the 
+                                        input properties. It initializes the component after 
+                                        Angular first displays the data-bound properties.
+
+// ...
+ngDoCheck()                         // Called during all change-detection runs that Angular 
+                                        can't detect on its own. Also called immediately after 
+                                        the ngOnChanges() method.
+onOnChanges()                       // Called whenever the input properties of the component change. 
+                                        It returns a SimpleChanges object which holds any 
+                                        current and previous property values.
+
+// View
+ngAfterViewInit()                   // Invoked after Angular initializes the component's views and its 
+                                        child views.
+ngAfterViewChecked()                 Invoked after each time Angular checks for the content projected 
+                                        into the component. a It called after ngAfterViewInit() 
+                                        and every subsequent ngAfterContentChecked().
+
+// Content
+ngAfterContentInit                  // Invoked once after Angular performs any content projection 
+                                        into the component’s view.
+ngAfterContentCheck                 // Invoked after each time Angular checks for content projected 
+                                        into the component. It's called after ngAfterContentInit() 
+                                        and every subsequent ngDoCheck().
+
+Destroy : ngOnDestroy()             // Invoked before Angular destroys the directive or component.
+
+
+
+
+===========================================================================================
+
+let pr = new Promise((resolve, reject)=>{
+    resolve('success')
+
+    reject()
+})
+
+pr.then().catch()
+
+let obs = new Observable((observer)=>{
+    observer.next() // multiple times
+    observer.error() // one time
+    observer.complete() // one time
+})
+
+obs.subscription({
+    next: ()=>{},
+    error: (error)=>{},
+    complete: ()=>{}
+})
+
+
+===========================================================================================
+
+let sub = new Subject();
+
+PubComp
+sub.next();
+
+Comp1
+sub.subscription();
+
+Comp2
+sub.subscription();
+
+Comp3
+sub.subscription();
+
+===========================================================================================
+
+add HttpClientModule to NgModule
+
+class AddProductComponent {
+
+    constructor(private http:HttpClient)
+
+}
+
+ngOnInit() {
+    this.http.get('http://')
+    next: data => {
+
+    },
+    error: (error)=>{},
+    complete:()=>{}
+}
+
+end review
+===========================================================================================
+
+Forms
+
+Template Driven Forms
+
+Reactive Forms
+
+import forms library into NgModule
+
+html:
+<form (ngSubmit)="onSubmit(signupForm)" #signupForm="ngForm">       // ngSubmit is for submitting the form. It is set to a function we define it the .ts file
+                                                                    // #signupForm declares a form variable in the back end of angular like so : let signupForm = new NgForm
+</form>
+
+.ts
+onSubmit(form:NgForm) {                                             // form can be a HTMLFormElement or NgForm (if #signupForm="ngForm" then it has to be NgForm)
+
+}               
+
+
+===========================================================================================
+
+Routing
+
+/index.html
+
+AppComponent
+
+HomeComponent
+CatalogComponent
+OrdersComponent
+MyProfileComponent
+
+Home | Catalog | Orders | MyProfile 
+
+===========================================================================================
+
+Gaurds

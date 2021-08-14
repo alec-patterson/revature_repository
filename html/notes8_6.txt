@@ -1,0 +1,175 @@
+Angular - Framework for building SPA - from Google
+
+Angulat CLI - helps to setup development project
+
+index.html
+
+Component - build blocks for Angular SPA
+- directive with template (UI - HTML)
+
+//module.ts
+@NgModule({
+    declarations: [],       //Component, Directive, Pipe
+    imports: [],
+    providers: [],
+    bootstrap: []
+})
+
+//component.ts
+@Component({
+    selector: "app-product",
+    templateUrl: "",            (or template: ``)
+    styleUrls: []               (or style: )
+})
+
+//component.html or with template: `` in component.ts
+HTML EX:
+`
+{{title}}
+<button [disables]="country == 'UK ? true : false" (click)="onAddProduct($event)"></button>
+`
+
+export class ProductComponent{
+    @Input() title:string = ''
+    country:string = 'UK'
+
+    @Output() add:EventEmitter<any> = new EventEmitter<any>();
+
+    onAddProduct(e:any) {
+        this.add.emit({});
+    }
+}
+
+<app-product [title]="" (add)="handleEvent($event)"></app-product>
+
+
+Directives - instructions to DOM
+
+Attribute directive 
+
+<div [ngStyle]="{}" [ngClass]=""></div>               // [ngStyle] or [ngClass]
+
+
+Structure directive 
+
+<li *ngFor="let fruit of fruits: let i = index">{{fruit}}</li>
+
+<div *ngIf="expression; else "></div>               // executes on true
+<ng-template #nogo>                                 // excutes on false
+<div>Else content</div>
+</ng-template>
+
+
+====================================
+
+Pipe
+Build-in Pipe
+Custom pipe
+
+Change Detection
+Content Projection
+Component Lifecycles
+
+Services
+Dependency Injection
+Injector Hierarchy
+
+Obserables
+Subject
+
+HttpClient
+
+====================================
+
+@Pipe({
+    selector: 'shorten'
+})
+
+class ShortenPipe implements PipeTransform {
+    transform(val:string) {
+        if(val.length > 200) {
+            return val.substring(0,200) + '...'
+        }
+        return val;
+    }
+}
+
+
+
+
+
+
+index.html
+
+<app-root></app-root>
+
+html
+
+<app-products>
+
+<app-product>
+
+class ProductComponent {
+    
+}
+
+p = new ProductComponent();
+
+Lifecycle hooks 
+
+instantiation
+initialization
+
+onChange
+
+ngOnChanges() {
+
+}
+ngDoCheck() {
+
+}
+
+content
+ngAfterContentInit()
+ngAfterContentChecked
+
+==================================================
+
+install rxjs library into node 
+npm i rxjs          // inside of the folder
+
+index.js 
+const {Observable, Observer} = require('rxjs')
+
+const observable = new Observable((observer) => {
+    setInterval(() = > {
+        if(i > 5) {
+            observer.complete()
+        }
+        observer.next(i++);
+    }, 1000);
+})
+
+observable.subscribe((data) => {
+    console.log('next : ' + data)
+}, (error) => {
+    console.log('error : ' + error))
+}, () => {
+    console.log('complete')
+});
+
+=====================================
+project integration
+
+project-2/
+    api-project/ <-- servlet, mvn, hibernate, REST
+    spa-project/ <-- Angular
+
+
+
+=====================================
+//Monday and Tuesday next week
+Forms 
+Routing
+Gaurds
+Unit Testing
