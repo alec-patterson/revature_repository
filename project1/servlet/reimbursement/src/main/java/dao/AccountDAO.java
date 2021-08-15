@@ -87,5 +87,4 @@ public class AccountDAO {
 			return false;
 		}
 	}
-	
 }

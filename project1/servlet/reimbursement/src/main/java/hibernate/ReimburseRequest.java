@@ -112,6 +112,6 @@ public class ReimburseRequest implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "[" + type + ", " + description + ", " + amount + ", " + timeStamp + "]";
+		return "[" + requestId + ", " + type + ", " + description + ", " + amount + ", " + timeStamp + "]";
 	}
 }

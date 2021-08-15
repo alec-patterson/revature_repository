@@ -17,7 +17,7 @@ import hibernate.ReimburseRequest;
 import user.Account;
 
 public class EmployeeDAO extends AccountDAO{
-	public static List<ReimburseRequest> viewRequests(Account a) {
+	public static List<ReimburseRequest> viewRequests(String email) {
 		Session session = a.getSession();
 		Query query = session.createQuery("FROM hibernate.ReimburseRequest where employee_id = :Id");
 		query.setInteger("Id", a.getEmployeeInfo().getEmployeeId());

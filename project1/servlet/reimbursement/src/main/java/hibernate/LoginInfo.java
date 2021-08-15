@@ -64,4 +64,8 @@ public class LoginInfo implements Serializable{
 	public void setEmployeeInfo(EmployeeInfo employee) {
 		this.employee = employee;
 	}
+
+	public EmployeeInfo getEmployeeInfo() {
+		return employee;
+	}
 }

@@ -38,17 +38,7 @@ public class ApplicationServices {
 		return success;
 	}
 	
-//		put in employee Services	
-//	public List<ReimburseRequest> getRequests() {
-//		List<ReimburseRequest> list = eDao.viewRequests(a);
-//		return list;
-//	}
-	
-	
-//		Put in employee Services
-//	public void addRequest(String type, String description, float amount) {
-//		eDao.addRequest(a, type, description, amount, new Date());
-//	}
+
 	
 	
 // 		put in finance Services

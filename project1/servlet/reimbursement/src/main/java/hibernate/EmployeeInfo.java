@@ -72,6 +72,10 @@ public class EmployeeInfo implements Serializable{
 		request.add(r);
 	}
 	
+	public Set<ReimburseRequest> getRequest() {
+		return request;
+	}
+	
 	@Override
 	public String toString() {
 		return "[" + employeeId + ", " + role + "]";
