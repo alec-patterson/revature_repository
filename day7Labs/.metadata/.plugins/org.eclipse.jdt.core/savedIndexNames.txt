@@ -1,5 +1,0 @@
-INDEX VERSION 1.131+C:\Users\Alec Patterson\OneDrive\Desktop\revature_repository\day7Labs\.metadata\.plugins\org.eclipse.jdt.core
-935241205.index
-1652090201.index
-36947350.index
-1899918522.index
