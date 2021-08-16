@@ -42,8 +42,9 @@ export class CreateAccountComponent{
       .subscribe({
         next: (data:any) => {
           if(data.success === true)
-            localStorage.setItem("success", data.success);
+            localStorage.setItem("role", data.role);
             localStorage.setItem("email", form.value.email);
+            localStorage.setItem("id", data.loginId);
             this.router.navigate(['home']);
         }
       })

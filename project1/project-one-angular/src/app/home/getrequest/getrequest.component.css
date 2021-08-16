@@ -1,0 +1,16 @@
+#rows {
+    width: 150px;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+#comp {
+    border: 3px solid black;
+    padding: 30px;
+    background-color: rgb(105, 105, 105, .5);
+}
+
+b {
+    margin-left:20px;
+}

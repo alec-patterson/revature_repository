@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private router:Router) { }
 
+  email:any = localStorage.getItem("email");
+  role:any = localStorage.getItem("role");
+
   ngOnInit(): void {
   }
 

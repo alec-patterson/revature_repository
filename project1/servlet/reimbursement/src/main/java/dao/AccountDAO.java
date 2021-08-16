@@ -15,69 +15,56 @@ import user.Account;
 
 public class AccountDAO {
 
-	public static String findLogin(String email, String password) {
+	public static LoginInfo findLogin(String email, String password) {
 		Session session = DBUtil.getInstance().getSession();
 		try {
 			Query query = session.createQuery("FROM hibernate.LoginInfo WHERE email = :Email");
 			query.setString("Email", email);
 			
-			LoginInfo l = (LoginInfo)query.uniqueResult();
-			System.out.println(l);
-			if(l != null) {
-				if(l.getPassword().equals(password)) {
-					query = session.createQuery("FROM hibernate.EmployeeInfo WHERE login_id = :lId");
-					query.setInteger("lId", l.getId());
-					return ((EmployeeInfo)query.uniqueResult()).getRole();
-				}
+			LoginInfo temp = (LoginInfo)query.uniqueResult();
+			if(temp.getPassword().equals(password)) {
+				LoginInfo l = session.find(LoginInfo.class, temp.getId());
+				return l;
 			}
+			return null;
 		} catch (HibernateException e) {
 			return null;
 		}
-		return null;
 	}
 	
-	public static boolean addLogin(Account a) {
-		Session session = a.getSession();
+	public static LoginInfo addLogin(LoginInfo l, EmployeeInfo e, PersonalInfo p) {
+		Session session = DBUtil.getInstance().getSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.save(a.getLoginInfo());
-			session.save(a.getEmployeeInfo());
-			session.save(a.getPersonalInfo());
+			session.save(l);
+			session.save(e);
+			session.save(p);
 			t.commit();
-			return true;
-		} catch (HibernateException e) {
+			return l;
+		} catch (HibernateException ex) {
 			if(t != null)
 				t.rollback();
-			return false;
+			return null;
 		}
 	}
 	
-	public static Account getAccount(String email) {
+	public static LoginInfo getAccount(int id) {
 		try {
 			Session session = DBUtil.getInstance().getSession();
-			Query query = session.createQuery("FROM hibernate.LoginInfo WHERE email = :Email");
-			query.setString("Email", email);
-			LoginInfo l = (LoginInfo)query.uniqueResult();
-			query = session.createQuery("FROM hibernate.EmployeeInfo WHERE login_id = :lId");
-			query.setInteger("lId", l.getId());
-			EmployeeInfo e = (EmployeeInfo)query.uniqueResult();
-			query = session.createQuery("FROM hibernate.PersonalInfo WHERE employee_id = :eId");
-			query.setInteger("eId", e.getEmployeeId());
-			PersonalInfo p = (PersonalInfo)query.uniqueResult();
-			Account a = new Account(l, e, p);
-		return a;
+			LoginInfo l = session.find(LoginInfo.class, id);
+			return l;
 		} catch (HibernateException e) {
 			return null;
 		}
 	}
 	
-	public static boolean updatePassword(Account a, String password) {
-		Session session = a.getSession();
+	public static boolean updatePassword(int id, String password) {
+		Session session = DBUtil.getInstance().getSession();
 		Transaction t = session.beginTransaction();
 		try {
-			Query query = session.createQuery("UPDATE hibernate.PersonalInfo SET password = :Pass WHERE personal_id = :Pid");
-			query.setString("Pass", password);
-			query.setInteger("Pid", a.getPersonalInfo().getId());
+			LoginInfo l = session.find(LoginInfo.class, id);
+			l.setPassword(password);
+			session.update(l);
 			t.commit();
 			return true;
 		} catch (HibernateException e) {
@@ -86,5 +73,14 @@ public class AccountDAO {
 			}
 			return false;
 		}
+	}
+	
+	public static boolean checkPassword(int id, String password) {
+		Session session = DBUtil.getInstance().getSession();
+		LoginInfo l = session.find(LoginInfo.class, id);
+		if(l.getPassword().equals(password)) {
+			return true;
+		}
+		return false;
 	}
 }

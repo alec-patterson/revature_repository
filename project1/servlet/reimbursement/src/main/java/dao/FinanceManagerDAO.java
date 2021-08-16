@@ -5,6 +5,7 @@ import org.hibernate.query.Query;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -18,50 +19,26 @@ import user.Account;
 
 public class FinanceManagerDAO extends AccountDAO{
 
-	public List<ReimburseRequest> getRequests(Account a, String filter) {
-		Session session = a.getSession();
-		Query query;
-		List<ReimburseRequest> list;
-		if(filter.toLowerCase().equals("lodging") || filter.toLowerCase().equals("travel") || filter.toLowerCase().equals("Food") || filter.toLowerCase().equals("other")) {
-			query = session.createQuery("FROM hibernate.ReimburseRequest where status = :Stat");
-			query.setString("Stat", filter);
-			list = query.list();
-		} else {
-			query = session.createQuery("FROM hibernate.ReimburseRequest");
-			list = query.list();
-		}
-		return list;
+	public static List<LoginInfo> getRequests() {
+		Session session = DBUtil.getInstance().getSession();
+		List<LoginInfo> lList;
+		Query<LoginInfo> query = session.createQuery("FROM hibernate.LoginInfo");
+		lList = query.list();
+		return lList;
 	}
 	
-	public boolean approveRequest(Account a, int requestId) {
-		Session session = a.getSession();
+	public static List<LoginInfo> updateStatus(int requestId, String status) {
+		Session session = DBUtil.getInstance().getSession();
 		Transaction t = session.beginTransaction();
 		try {
-			Query query = session.createQuery("UPDATE hibernate.ReimburseRequest SET status = approved WHERE request_id = :Id");
-			query.setInteger("Id", requestId);
-			query.executeUpdate();
+			ReimburseRequest rr = session.find(ReimburseRequest.class, requestId);
+			rr.setStatus(status);
+			session.update(rr);
 			t.commit();
-			return true;
-		} catch (HibernateException e) {
-			if(t != null)
-				t.rollback();
-			return false;
+		} catch (HibernateException e){
+			return null;
 		}
+		return getRequests();
 	}
 	
-	public boolean rejectRequest(Account a, int requestId) {
-		Session session = a.getSession();
-		Transaction t = session.beginTransaction();
-		try {
-			Query query = session.createQuery("UPDATE hibernate.ReimburseRequest SET status = rejected WHERE request_id = :Id");
-			query.setInteger("Id", requestId);
-			query.executeUpdate();
-			t.commit();
-			return true;
-		} catch (HibernateException e) {
-			if(t != null)
-				t.rollback();
-			return false;
-		}
-	}
 }

@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import common.util.Constants;
 import common.util.HttpUtil;
+import hibernate.LoginInfo;
 import services.ApplicationServices;
 
 @WebServlet("/createAccount")
@@ -26,16 +27,15 @@ public class CreateAccountServlet extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-		Map<String, Object> map = mapper.readValue(HttpUtil.getJSONData(request), new TypeReference<Map<String,Object>>(){});
-		String role = "employee";
-		ApplicationServices as = new ApplicationServices((String)map.get("email"), (String)map.get("password"), role, (String)map.get("firstName"),(String)map.get("lastName"),(String)map.get("address"),(String)map.get("city"),(String)map.get("state"),(String)map.get("zipcode"),(String)map.get("phonenumber"));
-		boolean success = as.addLogin();
-		if(success == true) {
-			response.getWriter().print("{\"success\":" + true + ", \"role\": \"" + role + "\"}");
-		} else {
-			response.getWriter().print("{\"success\":" + false + "}");
-		}
-		response.setStatus(Constants.HTTP_OK); 
+			Map<String, Object> map = mapper.readValue(HttpUtil.getJSONData(request), new TypeReference<Map<String,Object>>(){});
+			String role = "employee";
+			LoginInfo l = ApplicationServices.addLogin((String)map.get("email"), (String)map.get("password"), role, (String)map.get("firstName"),(String)map.get("lastName"),(String)map.get("address"),(String)map.get("city"),(String)map.get("state"),(String)map.get("zipcode"),(String)map.get("phonenumber"));
+			if(l != null) {
+				response.getWriter().print("{\"success\":" + true + ", \"role\": \"" + l.getEmployeeInfo().getRole() + "\", \"loginId\":" + l.getId() +  "}");
+			} else {
+				response.getWriter().print("{\"success\":" + false + "}");
+			}
+			response.setStatus(Constants.HTTP_OK); 
 		} catch(Exception e) {
 			e.printStackTrace();
 			response.setStatus(Constants.HTTP_ERROR);

@@ -32,7 +32,7 @@ public class ReimburseRequest implements Serializable{
 	private String description;
 	
 	@Column
-	private float amount;
+	private double amount;
 	
 	@Column (name = "time_stamp")
 	private Date timeStamp;
@@ -49,7 +49,7 @@ public class ReimburseRequest implements Serializable{
 		super();
 	}
 	
-	public ReimburseRequest(String type, String description, float amount, Date timeStamp, String status) {
+	public ReimburseRequest(String type, String description, double amount, Date timeStamp, String status) {
 		super();
 		this.type = type;
 		this.description = description;
@@ -65,14 +65,6 @@ public class ReimburseRequest implements Serializable{
 	public void setRequestId(int requestId) {
 		this.requestId = requestId;
 	}
-	
-//	public int getEmployeeId() {
-//		return employeeId;
-//	}
-//	
-//	public void setEmployeeId(int employeeId) {
-//		this.employeeId = employeeId;
-//	}
 	
 	public String getType() {
 		return type;
@@ -90,7 +82,7 @@ public class ReimburseRequest implements Serializable{
 		this.description = description;
 	}
 	
-	public float getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 	
@@ -104,6 +96,14 @@ public class ReimburseRequest implements Serializable{
 	
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+	
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
 	}
 	
 	public void setEmployeeInfo(EmployeeInfo eRequest) {

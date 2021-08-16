@@ -25,6 +25,7 @@ export class LoginComponent {
                 if(data.success === true) {
                     localStorage.setItem("email", form.value.email);
                     localStorage.setItem("role", data.role);
+                    localStorage.setItem("id", data.loginId);
                     this.router.navigate(['home']);
                 }
                 else if(data.success === false) {

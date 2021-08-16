@@ -1,6 +1,18 @@
-<p>home works!</p>
-
 <div>
-    <button (click)="logout()">Logout</button>
+    <div id=header>
+    <h1>Welcome {{email}}</h1>
+    <button id=logout (click)="logout()">Logout</button>
+    </div>
+    <div id=body>
+        <div *ngIf="role === 'employee'">
+            <span><button routerLink='addrequest'>Create New Request</button></span><b>|</b>
+            <span><button routerLink='getrequest'>Get My Requests</button></span><b>|</b>
+            <span><button routerLink='getpersonal'>View Personal Information</button></span>
+        </div>
+        <div *ngIf="role === 'finance'">
+            <span><button routerLink='getall'>View Requests</button></span><b>|</b>
+            <span><button routerLink='getpersonal'>View Personal Information</button></span>
+        </div>
+    </div>
     <router-outlet></router-outlet>
 </div>

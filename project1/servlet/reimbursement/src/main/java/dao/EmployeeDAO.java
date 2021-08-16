@@ -5,6 +5,7 @@ import org.hibernate.query.Query;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,27 +18,33 @@ import hibernate.ReimburseRequest;
 import user.Account;
 
 public class EmployeeDAO extends AccountDAO{
-	public static List<ReimburseRequest> viewRequests(String email) {
-		Session session = a.getSession();
-		Query query = session.createQuery("FROM hibernate.ReimburseRequest where employee_id = :Id");
-		query.setInteger("Id", a.getEmployeeInfo().getEmployeeId());
-		List<ReimburseRequest> list = query.list();
-		return list;
+	
+	public static EmployeeInfo getRequests(int id) {
+		Session session = DBUtil.getInstance().getSession();
+		LoginInfo l = session.find(LoginInfo.class, id);
+		return l.getEmployeeInfo();
 	}
 	
-	public static void addRequest(Account a, String type, String description, float amount, Date timestamp) {
-		Session session = a.getSession();
-		ReimburseRequest r = new ReimburseRequest(type, description, amount, timestamp, "pending");
-		Transaction t = session.beginTransaction();
-		try {
-			r.setEmployeeInfo(a.getEmployeeInfo());
-			a.getEmployeeInfo().addReimburseRequest(r);
-			session.save(r);
-			t.commit();
-		} catch (HibernateException e) {
-			if(t != null)
-				t.rollback();
-			throw e;
+	public static boolean addRequest(int id, String type, String description, String amount, Date timestamp) {
+		Session session = DBUtil.getInstance().getSession();
+		
+		try {	
+			ReimburseRequest r = new ReimburseRequest(type, description, Double.parseDouble(amount), timestamp, "pending");
+			Transaction t = session.beginTransaction();
+			try {
+				LoginInfo l = session.find(LoginInfo.class, id);
+				l.getEmployeeInfo().addReimburseRequest(r);
+				r.setEmployeeInfo(l.getEmployeeInfo());
+				session.save(r);
+				t.commit();
+				return true;
+			} catch (HibernateException e) {
+				if(t != null)
+					t.rollback();
+				return false;
+			}
+		} catch (NumberFormatException e) {
+			return false;
 		}
 	}
 }

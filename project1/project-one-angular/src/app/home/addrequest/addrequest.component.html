@@ -1,0 +1,19 @@
+<div id=addForm>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <label for="type">Type: </label>
+        <select id="type" name="type" required ngModel>
+            <option value="Lodging">Lodging</option>
+            <option value="Travel">Travel</option>
+            <option value="Food">Food</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+        <label for="description">Description: </label>
+        <input id="description" type="text" name="description" required ngModel>
+        <br><br>
+        <label for="amount">Amount: </label>
+        <input id="amount" type="number" name="amount" required  ngModel>
+        <br><br>
+        <button type="submit" [disabled]="!f.valid">Submit Request</button>
+    </form>
+</div>

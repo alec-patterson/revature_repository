@@ -1,0 +1,11 @@
+#master {
+    border: 3px solid black;
+    padding: 20px;
+    background-color: rgb(105, 105, 105, 0.25);
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}

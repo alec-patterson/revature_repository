@@ -1,0 +1,31 @@
+<div id=comp>
+    <!-- <div *ngIf="run === false">{{getRequests()}}</div> -->   
+    <h3><b>Employee Id:</b> {{employee.employeeId}} <b>Name:</b> {{employee.personalInfo.firstName}} {{employee.personalInfo.lastName}}</h3>
+    <div *ngIf="employee.requests.length !== 0; else None ">
+        <table>   
+            <thead>
+                <tr>
+                    <th scope="col">Request Id</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">description</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Time Submitted</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>   
+            <tbody>  
+                <tr *ngFor="let req of employee.requests">
+                    <td id=rows>{{req.requestId}}</td>
+                    <td id=rows>{{req.type}}</td>
+                    <td id=rows>{{req.description}}</td>
+                    <td id=rows>$ {{req.amount.toFixed(2)}}</td>
+                    <td id=rows>{{formatDate(req.timeStamp)}}</td>
+                    <td id=rows>{{req.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    </div>
+</div>
+
+<ng-template #None><h2><b>No Requests Submitted</b></h2></ng-template>

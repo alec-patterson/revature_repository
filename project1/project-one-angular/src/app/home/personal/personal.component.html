@@ -1,0 +1,45 @@
+<div id=master>
+    <h2>Personal Information</h2>
+    <div>
+        <label for="firstName">First Name: </label>
+        <span id="firstName">{{person.employeeInfo.personalInfo.firstName}}</span>
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <span id="lastName">{{person.employeeInfo.personalInfo.lastName}}</span>
+    </div>
+    <div>
+        <label for="email">Email: </label>
+        <span id="email">{{person.email}}</span>
+    </div>
+    <div>
+        <label for="employeeId">Employee Id: </label>
+        <span id="employeeId">{{person.employeeInfo.employeeId}}</span>
+    </div>
+    <div>
+        <label for="Address">Address: </label>
+        <span id="Address">{{person.employeeInfo.personalInfo.address}}, {{person.employeeInfo.personalInfo.city}}, {{person.employeeInfo.personalInfo.state}}, {{person.employeeInfo.personalInfo.zipCode}}</span>
+    </div>
+    <div>
+        <label for="phonenumber">Phone Number: </label>
+        <span id="phonenumber">{{person.employeeInfo.personalInfo.phonenumber}}</span>
+    </div>
+    <div>
+        <h2>Change Password</h2>
+        <div *ngIf="passIncorrect === true" style="color: red">Incorrect Password</div>
+        <div *ngIf="confirmed === false && confirmedTouched === true" style="color: red">Password and Confirm Password do not match</div>
+        <br>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <label for="password">Enter Password: </label>
+            <input id="cpassword" type="password" name="cpassword" required ngModel>
+            <br><br>
+            <label for="nPassword">Enter New Password: </label>
+            <input id="nPassword" type="password" name="nPassword" (input)=onPassChange($event) required ngModel>
+            <br><br>
+            <label for="passwordC">Confirm New Password: </label>
+            <input id="passwordC" type="password" name="passwordC" (input)=onConfirmChange($event) required ngModel>
+            <br><br>
+            <button type="submit" [disabled]="!confirmed || !f.valid">Update</button>
+        </form>
+    </div>
+</div>

@@ -68,11 +68,15 @@ public class EmployeeInfo implements Serializable{
 		this.person = person;
 	}
 	
+	public PersonalInfo getPersonalInfo() {
+		return person;
+	}
+	
 	public void addReimburseRequest(ReimburseRequest r) {
 		request.add(r);
 	}
 	
-	public Set<ReimburseRequest> getRequest() {
+	public Set<ReimburseRequest> getRequests() {
 		return request;
 	}
 	

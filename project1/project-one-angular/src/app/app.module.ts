@@ -10,12 +10,22 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './login/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { AddrequestComponent } from './home/addrequest/addrequest.component';
+import { GetrequestComponent } from './home/getrequest/getrequest.component';
+import { GetallrequestsComponent } from './home/getAllrequests/getallrequests.component';
+import { PersonalComponent } from './home/personal/personal.component';
 
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'home', component:HomeComponent},
+  {path: 'home', component:HomeComponent, canActivate: [AuthGuard], children: [
+    {path:'addrequest', component:AddrequestComponent},
+    {path:'getrequest', component:GetrequestComponent},
+    {path:'getall', component:GetallrequestsComponent},
+    {path:'getpersonal', component:PersonalComponent}
+  ]},
   {path:'createNewAccount', component:CreateAccountComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'**', component:HomeComponent}
 ]
 
 @NgModule({
@@ -23,7 +33,11 @@ const routes:Routes = [
     AppComponent,
     LoginComponent,
     CreateAccountComponent,
-    HomeComponent
+    HomeComponent,
+    AddrequestComponent,
+    GetrequestComponent, 
+    GetallrequestsComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,

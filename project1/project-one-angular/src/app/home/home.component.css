@@ -1,0 +1,30 @@
+h1 {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#header {
+    border: 3px solid black;
+    align-items: right;
+    background-color: cyan;
+}
+
+#logout {
+    margin: 10px;
+}
+
+#body {
+    border: 3px solid black;
+    padding: 20px;
+    background-color: rgb(255, 228, 196, .75) ;
+}
+
+#inner {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+span {
+    margin-right: 10px;
+    margin-left: 10px;
+}

@@ -15,7 +15,7 @@
         <br><br>
         <label for="passwordC">Confirm Password: </label>
         <input id="passwordC" type="password" name="passwordC" (input)=onConfirmChange($event) required ngModel>
-        <div *ngIf="confirmed === false && confirmedTouched === true">Password and Confirm Password do not match</div>
+        <div *ngIf="confirmed === false && confirmedTouched === true" style="color: red">Password and Confirm Password do not match</div>
         <br><br>
         <label for="address">Address: </label>
         <input id="address" type="text" name="address" required ngModel>

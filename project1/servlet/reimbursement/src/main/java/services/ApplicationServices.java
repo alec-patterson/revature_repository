@@ -16,47 +16,30 @@ import user.Account;
 public class ApplicationServices {
 	Account a = null;
 	
-	public ApplicationServices(String email, String password, String role, String firstName, String lastName, String address, String city, String state, String zipcode, String phonenumber) {
-		this.a = new Account(email, password, role, firstName, lastName, address, city, state, zipcode, phonenumber);
+	public static LoginInfo getAccount(int id) {
+		return AccountDAO.getAccount(id);
 	}
 	
-	public ApplicationServices(String email) {
-		a = AccountDAO.getAccount(email);
+	public static LoginInfo addLogin(String email, String password, String role, String firstName, String lastName, String address, String city, String state, String zipcode, String phonenumber) {
+		LoginInfo l = new LoginInfo(email, password);
+		EmployeeInfo e = new EmployeeInfo(role);
+		PersonalInfo p = new PersonalInfo(firstName, lastName, address, city, state, zipcode, phonenumber);
+		l.setEmployeeInfo(e);
+		e.setLoginInfo(l);
+		e.setPersonalInfo(p);
+		p.setEmployeeInfo(e);
+		return AccountDAO.addLogin(l, e, p);
 	}
 	
-	public static String login(String email, String password) {
+	public static LoginInfo login(String email, String password) {
 		return AccountDAO.findLogin(email, password);
 	}
-	
-	public boolean addLogin() {
-		return AccountDAO.addLogin(a);
-	}
-	
-	public boolean updatePassword(String password) {
-		boolean success = false;
-		success = AccountDAO.updatePassword(a, password);
-		return success;
-	}
-	
 
-	
-	
-// 		put in finance Services
-//	public List<ReimburseRequest> filterRequests(String filter) {
-//		List<ReimburseRequest> list = fDao.getRequests(a, filter);
-//		return list;
-//	}
-//	
-//	public boolean approveRequest(int id) {
-//		boolean success = false;
-//		success = fDao.approveRequest(a, id);
-//		return success;
-//	}
-//	
-//	public boolean rejectRequest(int id) {
-//		boolean success = false;
-//		success = fDao.rejectRequest(a, id);
-//		return success;
-//	}
+	public static boolean updatePassword(int id, String cPassword, String nPassword) {
+		if(AccountDAO.checkPassword(id, cPassword)) {
+			return AccountDAO.updatePassword(id, nPassword);
+		}
+		return false;
+	}
 	
 }
