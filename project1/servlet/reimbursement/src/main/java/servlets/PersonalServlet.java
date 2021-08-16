@@ -26,6 +26,10 @@ public class PersonalServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	}
 	
+	
+	/*
+	 * Communicates with the front end to get a users personal information
+	 */
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {

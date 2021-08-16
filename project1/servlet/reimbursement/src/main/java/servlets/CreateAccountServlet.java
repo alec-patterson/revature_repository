@@ -24,6 +24,11 @@ public class CreateAccountServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	}
 	
+	
+	/*
+	 * Communicates with the front end to add new Account to the Database
+	 */
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		ObjectMapper mapper = new ObjectMapper();
 		try {
@@ -43,29 +48,3 @@ public class CreateAccountServlet extends HttpServlet{
 		response.setContentType(Constants.HTTP_JSON_CONTENT);
 	}
 }
-
-	
-	
-	
-	
-	
-//	ObjectMapper mapper = new ObjectMapper();
-//	StringBuffer jsonStrBuffer = new StringBuffer();
-//	String line = "";
-//	BufferedReader reader = request.getReader();
-////	while((line = reader.readLine()) != null)
-////		System.out.println(line);
-//	reader.readLine();
-//	String loginString = "{" + reader.readLine() + reader.readLine() + reader.readLine() + reader.readLine() + reader.readLine() + reader.readLine() + reader.readLine() + "}";
-//	loginString = loginString.substring(0, loginString.length()-2) + "}";
-//	System.out.println(loginString);
-//	PersonalInfo p = mapper.readValue(loginString, PersonalInfo.class);
-//	System.out.println(p);
-//	//LoginInfo l = mapper.readValue(HttpUtil.getJSONData(request), LoginInfo.class);
-//	boolean success = true;
-//	response.getWriter().print("{\"status\":" + (success ? true:false) + "}");
-//	response.setStatus(Constants.HTTP_OK);
-//} catch (Exception e) {
-//	response.setStatus(Constants.HTTP_ERROR);
-//}
-//response.setContentType(Constants.HTTP_JSON_CONTENT);

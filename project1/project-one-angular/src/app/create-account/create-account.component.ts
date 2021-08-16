@@ -16,6 +16,10 @@ export class CreateAccountComponent{
   confirmed:boolean = false;
   confirmedTouched:boolean = false;
 
+
+  // changes password1 anytime an event occurs on the 
+  // password input, this is used to confirm that the password
+  // and confirmation password are the same
   onPassChange(e:any) {
     this.password1 = e.target.value;
     if(this.password1 === this.password2)
@@ -24,6 +28,8 @@ export class CreateAccountComponent{
       this.confirmed = false;
   }
 
+
+  // Same functionality as above but on password2
   onConfirmChange(e:any) {
     this.password2 = e.target.value;
     this.confirmedTouched = true;
@@ -35,6 +41,9 @@ export class CreateAccountComponent{
 
   constructor(private http:HttpClient, private router:Router) { }
 
+
+  // sends a post request with the information from the submitted form to create a new account
+  // if successful the new user is automatically logged in
   onSubmit(form:NgForm) {
     this.http.post('http://localhost:9080/reimbursement/createAccount', 
     JSON.stringify({firstName:form.value.firstName, lastName:form.value.lastName, email:form.value.email, password:form.value.password, address:form.value.address, 

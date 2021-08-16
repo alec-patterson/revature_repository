@@ -1,10 +1,8 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,19 +16,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import common.util.Constants;
 import common.util.HttpUtil;
 import hibernate.LoginInfo;
-import services.EmployeeServices;
 import services.FinanceServices;
 
 
 @WebServlet("/getAllRequests")
 public class GetAllRequestsServlet extends HttpServlet{
 
+	/*
+	 * Communicates with the front end to retrieve all user information get every users requests
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonString = "";
-			FinanceServices fs = new FinanceServices();
-			List<LoginInfo> lList = fs.getRequests();
+			List<LoginInfo> lList = FinanceServices.getRequests();
 			jsonString = mapper.writeValueAsString(lList);
 			response.getWriter().print(jsonString);
 			response.setStatus(Constants.HTTP_OK);
@@ -40,6 +39,10 @@ public class GetAllRequestsServlet extends HttpServlet{
 		response.setContentType(Constants.HTTP_JSON_CONTENT);
 	}
 	
+	
+	/*
+	 * Communicates with the front end to change that status of a Reimbursement Request
+	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
@@ -48,8 +51,7 @@ public class GetAllRequestsServlet extends HttpServlet{
 			Map<String, Object> map = mapper.readValue(HttpUtil.getJSONData(request), new TypeReference<Map<String, Object>>() {});
 			System.out.println((int)map.get("requestId"));
 			System.out.println((String)map.get("status"));
-			FinanceServices fs = new FinanceServices();
-			List<LoginInfo> lList = fs.updateStatus((int)map.get("requestId"), (String)map.get("status"));
+			List<LoginInfo> lList = FinanceServices.updateStatus((int)map.get("requestId"), (String)map.get("status"));
 			jsonString = mapper.writeValueAsString(lList);
 			response.getWriter().print(jsonString);
 			response.setStatus(Constants.HTTP_OK);

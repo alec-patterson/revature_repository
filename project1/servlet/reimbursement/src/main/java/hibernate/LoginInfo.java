@@ -10,6 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+
+/*
+ * LoginInfo is mapped to the login_information table of the database
+ * With a One-To-One relationship with EmployeeInfo
+ */
 @Entity (name = "login_information")
 public class LoginInfo implements Serializable{
 	@Id
@@ -22,6 +27,9 @@ public class LoginInfo implements Serializable{
 	
 	@Column
 	private String password;
+	
+	@Column
+	private String salt;
 	
 	@OneToOne(mappedBy = "login")
 	private EmployeeInfo employee;
@@ -54,6 +62,14 @@ public class LoginInfo implements Serializable{
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+	
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 	
 	@Override

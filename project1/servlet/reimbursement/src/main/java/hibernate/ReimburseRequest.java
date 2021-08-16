@@ -3,7 +3,6 @@ package hibernate;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,9 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
+
+/*
+ * ReimbursementRequest is mapped to the reimbursement_requests table of the database
+ * With a Many-To-One relationship with EmployeeInfo
+ */
 @Entity (name = "reimbursement_requests")
 public class ReimburseRequest implements Serializable{
 	@Id

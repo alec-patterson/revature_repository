@@ -15,6 +15,12 @@ import { GetrequestComponent } from './home/getrequest/getrequest.component';
 import { GetallrequestsComponent } from './home/getAllrequests/getallrequests.component';
 import { PersonalComponent } from './home/personal/personal.component';
 
+/* 
+ * All paths that the front-end application takes
+ * AuthGuard is used to prevent any webpage that accesses information
+ * from being reached by redirecting to the login page if the user
+ * is not logged in 
+ */
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'home', component:HomeComponent, canActivate: [AuthGuard], children: [

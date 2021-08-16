@@ -1,8 +1,20 @@
-
+<!-- creates tables of reimbursement requests for each user
+    A filter drop down menu is available to change which reimbursement
+    requests are displayed based on status of the request -->
 <div id=master>
     <h2>Employee Requests</h2>
-    <div *ngFor="let logs of requests">
-        <div *ngIf="logs.employeeInfo.requests.length !== 0">    
+    <form (ngSubmit)="updateFilter(f)" #f="ngForm">
+        <label for="filter">Filter Requests:</label>
+        <select id="filter" name="filter" ngModel>
+            <option value="none" [selected]>none</option>
+            <option value="pending">pending</option>
+            <option value="denied">denied</option>
+            <option value="approved">approved</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <div *ngFor="let logs of filtered">
+        <div *ngIf="logs.employeeInfo.requests.length !== 0"> 
             <h3><b>Employee Id:</b> {{logs.employeeInfo.employeeId}} <b>Name:</b> {{logs.employeeInfo.personalInfo.firstName}} {{logs.employeeInfo.personalInfo.lastName}}</h3>
             <table>   
                 <thead>
@@ -20,7 +32,7 @@
                         <td id=rows>{{req.requestId}}</td> 
                         <td id=rows>{{req.type}}</td> 
                         <td id=rows>{{req.description}}</td>
-                        <td id=rows>$ {{req.amount.toFixed(2)}}</td>
+                        <td id=amountRows>$ {{req.amount.toFixed(2)}}</td>
                         <td id=rows>{{formatDate(req.timeStamp)}}</td>
                         <td id=rows>{{req.status}}</td>
                         <td *ngIf="req.status === 'pending'"><button (click)="changeStatus(req.requestId, 'approved')">Approve</button></td> 

@@ -17,6 +17,10 @@ export class PersonalComponent implements OnInit {
   confirmedTouched:boolean = false;
   passIncorrect:boolean = false;
 
+  // updates the password1 provided in the npassword text box 
+  // password1 is updated as a user types it in
+  // this is used for confirming that the new password and 
+  // the confirmation of the new password are the same
   onPassChange(e:any) {
     this.password1 = e.target.value;
     if(this.password1 === this.password2)
@@ -25,6 +29,7 @@ export class PersonalComponent implements OnInit {
       this.confirmed = false;
   }
 
+  // performs the same as the above function
   onConfirmChange(e:any) {
     this.password2 = e.target.value;
     this.confirmedTouched = true;
@@ -36,6 +41,8 @@ export class PersonalComponent implements OnInit {
 
   constructor(private router:Router, private http:HttpClient) { }
 
+  // Upon initialization of this page a post request sent to the server
+  // to retrieve the users personal information
   ngOnInit(): void {
     this.http.post('http://localhost:9080/reimbursement/personalInfo',
     JSON.stringify({id:Number(localStorage.getItem("id"))}))
@@ -46,6 +53,7 @@ export class PersonalComponent implements OnInit {
     })
   }
 
+  // onSubmit will take in a form and send a post request to update the users password
   onSubmit(form:NgForm) {
     this.http.post('http://localhost:9080/reimbursement/newPassword',
     JSON.stringify({id:Number(localStorage.getItem("id")), cpassword:form.value.cpassword, npassword:form.value.nPassword}))

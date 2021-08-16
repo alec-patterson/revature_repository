@@ -12,11 +12,15 @@ import { Router } from "@angular/router";
 export class LoginComponent {
     constructor(private http:HttpClient, private router:Router) {}
 
+    // Used for telling the user if the login was unsuccessful
     invalid:boolean = false;
 
     OnInit() {
     }
 
+    // performs a post request to confirm if the provided login credentials are correct or not
+    // if correct the role and login id of the user will be sent back and saved to local storage,
+    // additionally the email will also be saved to the local storage
     onSubmit(form:NgForm) {
         this.http.post('http://localhost:9080/reimbursement/login', 
             JSON.stringify({email:form.value.email,password:form.value.password}))
@@ -38,6 +42,8 @@ export class LoginComponent {
         
     }
 
+    // if the user clicks on the create new account link then they will be redirected
+    // to the appropriate site
     createAccount() {
         this.router.navigate(['createNewAccount']);
     }

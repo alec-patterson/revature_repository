@@ -14,6 +14,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+/*
+ * EmployeeInfo is mapped to the employee_information table of the database
+ * With a One-To-One relationship with LoginInfo and PersonalInfo
+ * Also a One-To-Many relationship with ReimbursementRequests
+ */
+
 @Entity (name = "employee_information")
 public class EmployeeInfo implements Serializable{
 	@Id

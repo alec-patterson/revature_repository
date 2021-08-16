@@ -16,16 +16,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import common.util.Constants;
 import common.util.HttpUtil;
-import hibernate.LoginInfo;
 import services.ApplicationServices;
-
-
 
 @WebServlet("/newPassword")
 public class newPasswordServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	}
 	
+	
+	/*
+	 * Communicates with the front end to update a users password
+	 */
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {

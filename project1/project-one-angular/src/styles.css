@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*
+ * This global css style sheet sets the background
+ * of the program and keeps it statically in place
+ */
 body {
     background-image: url("app/login/background_2.jpg");
     background-repeat: no-repeat;

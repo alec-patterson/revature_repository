@@ -17,6 +17,8 @@ export class AddrequestComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // sends a post request with the information provided in the submitted form
+  // to create and add a new reimbursement request to the database
   onSubmit(form:NgForm) {
     this.http.post('http://localhost:9080/reimbursement/addRequests',
     JSON.stringify({id:Number(localStorage.getItem("id")), type:form.value.type, description:form.value.description,

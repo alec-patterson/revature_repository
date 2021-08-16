@@ -3,22 +3,21 @@ package dao;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import common.util.DBUtil;
-import hibernate.EmployeeInfo;
 import hibernate.LoginInfo;
-import hibernate.PersonalInfo;
 import hibernate.ReimburseRequest;
-import user.Account;
 
 public class FinanceManagerDAO extends AccountDAO{
 
+	/*
+	 * getRequests returns a list of all of the LoginInfo entries
+	 * Used for displaying all requests for a Financial Manager
+	 */
 	public static List<LoginInfo> getRequests() {
 		Session session = DBUtil.getInstance().getSession();
 		List<LoginInfo> lList;
@@ -27,6 +26,11 @@ public class FinanceManagerDAO extends AccountDAO{
 		return lList;
 	}
 	
+	
+	/*
+	 * updateStatus returns a list of all of the LoginInfo entries after updating 
+	 * a user's reimbursement request to either approved or denied
+	 */
 	public static List<LoginInfo> updateStatus(int requestId, String status) {
 		Session session = DBUtil.getInstance().getSession();
 		Transaction t = session.beginTransaction();

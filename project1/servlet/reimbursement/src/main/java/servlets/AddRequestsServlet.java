@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -24,12 +23,15 @@ public class AddRequestsServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	}
 	
+	
+	/*
+	 * Communicates with the front end to add a Reimbursement Request to the database
+	 */
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			Map<String, Object> map = mapper.readValue(HttpUtil.getJSONData(request), new TypeReference<Map<String,Object>>(){});
-//			System.out.println(HttpUtil.getJSONData(request));
 			System.out.println((int)map.get("id"));
 			System.out.println((String)map.get("type"));
 			System.out.println((String)map.get("description"));

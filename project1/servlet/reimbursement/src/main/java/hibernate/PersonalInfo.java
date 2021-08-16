@@ -11,6 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+
+/*
+ * PersonalInfo is mapped to the personal_information table of the database
+ * With a One-To-One relationship with EmployeeInfo
+ */
 @Entity (name = "personal_information")
 public class PersonalInfo implements Serializable{
 	
@@ -23,8 +28,6 @@ public class PersonalInfo implements Serializable{
 	@OneToOne
 	@JoinColumn (name = "employee_id")
 	private EmployeeInfo ePersonal;
-	
-//	private int employeeId;
 	
 	@Column (name = "first_name")
 	private String firstName;
@@ -68,14 +71,6 @@ public class PersonalInfo implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-//	public int getEmployeeId() {
-//		return employeeId;
-//	}
-//	
-//	public void setEmployeeId(int employeeId) {
-//		this.employeeId = employeeId;
-//	}
 	
 	public String getFirstName() {
 		return firstName;

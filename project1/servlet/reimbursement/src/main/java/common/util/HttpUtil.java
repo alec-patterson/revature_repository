@@ -6,10 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class HttpUtil {
 
-//	public static String[] getPathVariables(HttpServletRequest req) {
-//		String[] variables = null;
-//		String path = req.getPathInfo();
-//	}
+	// Converts a request into a StringBuffer and returns a String
 	public static String getJSONData(HttpServletRequest req) throws Exception {
 		StringBuffer jsonStrBuffer = new StringBuffer();
 		String line = null;

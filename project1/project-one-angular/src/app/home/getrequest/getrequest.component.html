@@ -1,3 +1,5 @@
+<!-- Creates a table displaying all reimbursement requests a user has submitted
+    or if a user hasn't submitted any then a message will notify them -->
 <div id=comp>
     <!-- <div *ngIf="run === false">{{getRequests()}}</div> -->   
     <h3><b>Employee Id:</b> {{employee.employeeId}} <b>Name:</b> {{employee.personalInfo.firstName}} {{employee.personalInfo.lastName}}</h3>
@@ -18,7 +20,7 @@
                     <td id=rows>{{req.requestId}}</td>
                     <td id=rows>{{req.type}}</td>
                     <td id=rows>{{req.description}}</td>
-                    <td id=rows>$ {{req.amount.toFixed(2)}}</td>
+                    <td id=amountRows>$ {{req.amount.toFixed(2)}}</td>
                     <td id=rows>{{formatDate(req.timeStamp)}}</td>
                     <td id=rows>{{req.status}}</td>
                 </tr>
