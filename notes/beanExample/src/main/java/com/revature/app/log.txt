@@ -1,0 +1,114 @@
+2021-08-17 12:29:58,502 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:29:58,609 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:29:58,631 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:33:11,851 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:33:11,956 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:33:11,976 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:34:52,419 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@14a50707
+2021-08-17 12:34:52,526 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:34:52,548 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:39:14,335 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:39:14,449 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:39:14,472 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:41:00,309 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:41:00,426 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:41:00,445 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:44:51,210 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:44:51,319 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:44:51,343 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:44:58,165 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:44:58,273 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:44:58,296 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:52:55,974 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:52:56,085 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 2 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:52:56,106 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:52:56,115 WARN o.s.c.s.ClassPathXmlApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userMgr' defined in class path resource [applicationContext.xml]: Cannot resolve reference to bean 'user1' while setting bean property 'user'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'user1' available
+2021-08-17 12:53:50,511 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@68746f22
+2021-08-17 12:53:50,631 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 2 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:53:50,655 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:53:50,668 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user'
+2021-08-17 12:53:50,699 WARN o.s.c.s.ClassPathXmlApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userMgr' defined in class path resource [applicationContext.xml]: Cannot resolve reference to bean 'user' while setting bean property 'user'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user' defined in class path resource [applicationContext.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'name' of bean class [model.User]: Bean property 'name' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+2021-08-17 12:54:10,322 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@27912e3
+2021-08-17 12:54:10,435 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 2 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:54:10,456 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:54:10,466 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-17 12:54:10,495 WARN o.s.c.s.ClassPathXmlApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userMgr' defined in class path resource [applicationContext.xml]: Cannot resolve reference to bean 'user1' while setting bean property 'user'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'user1' defined in class path resource [applicationContext.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'name' of bean class [model.User]: Bean property 'name' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+2021-08-17 12:56:00,799 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 12:56:00,905 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 2 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 12:56:00,924 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 12:56:00,935 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-17 13:00:44,825 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 13:00:44,938 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 13:00:44,961 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 13:00:44,971 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-17 13:00:45,009 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-17 15:47:43,936 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 15:47:44,036 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2021-08-17 15:47:44,057 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-17 15:47:44,066 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-17 15:47:44,099 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:29:52,979 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-18 07:29:53,089 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 5 bean definitions from class path resource [applicationContext.xml]
+2021-08-18 07:29:53,114 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-18 07:29:53,125 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-18 07:29:53,161 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:29:53,162 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accMgr'
+2021-08-18 07:29:53,163 WARN o.s.c.s.ClassPathXmlApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [dao.AccountDao.Impl] for bean with name 'dao' defined in class path resource [applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: dao.AccountDao.Impl
+2021-08-18 07:30:21,444 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@30b6ffe0
+2021-08-18 07:30:21,548 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 5 bean definitions from class path resource [applicationContext.xml]
+2021-08-18 07:30:21,570 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-18 07:30:21,580 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-18 07:30:21,614 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:30:21,615 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accMgr'
+2021-08-18 07:30:21,615 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'dao'
+2021-08-18 07:39:45,813 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-18 07:39:45,972 DEBUG o.s.c.a.ClassPathBeanDefinitionScanner [main] Ignored because not a concrete top-level class: file [C:\Users\Alec Patterson\OneDrive\Desktop\revature_repository\notes\beanExample\target\classes\dao\AccountDao.class]
+2021-08-18 07:39:45,973 DEBUG o.s.c.a.ClassPathBeanDefinitionScanner [main] Identified candidate component class: file [C:\Users\Alec Patterson\OneDrive\Desktop\revature_repository\notes\beanExample\target\classes\dao\AccountDaoImpl.class]
+2021-08-18 07:39:45,994 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 10 bean definitions from class path resource [applicationContext.xml]
+2021-08-18 07:39:46,011 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-08-18 07:39:46,040 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-08-18 07:39:46,041 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-08-18 07:39:46,042 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-08-18 07:39:46,047 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accountDaoImpl'
+2021-08-18 07:39:46,050 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-18 07:39:46,051 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-18 07:39:46,072 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:39:46,073 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accMgr'
+2021-08-18 07:39:46,084 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'dao'
+2021-08-18 07:40:30,400 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-18 07:40:30,615 DEBUG o.s.c.a.ClassPathBeanDefinitionScanner [main] Identified candidate component class: file [C:\Users\Alec Patterson\OneDrive\Desktop\revature_repository\notes\beanExample\target\classes\dao\AccountDaoImpl.class]
+2021-08-18 07:40:30,635 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 10 bean definitions from class path resource [applicationContext.xml]
+2021-08-18 07:40:30,659 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-08-18 07:40:30,697 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-08-18 07:40:30,699 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-08-18 07:40:30,701 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-08-18 07:40:30,707 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accountDaoImpl'
+2021-08-18 07:40:30,713 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-18 07:40:30,715 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-18 07:40:30,747 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:40:30,748 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accMgr'
+2021-08-18 07:40:30,764 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'dao'
+2021-08-18 07:41:37,732 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b993c65
+2021-08-18 07:41:37,904 DEBUG o.s.c.a.ClassPathBeanDefinitionScanner [main] Identified candidate component class: file [C:\Users\Alec Patterson\OneDrive\Desktop\revature_repository\notes\beanExample\target\classes\dao\AccountDaoImpl.class]
+2021-08-18 07:41:37,917 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 9 bean definitions from class path resource [applicationContext.xml]
+2021-08-18 07:41:37,934 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-08-18 07:41:37,968 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-08-18 07:41:37,969 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-08-18 07:41:37,971 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-08-18 07:41:37,977 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accountDaoImpl'
+2021-08-18 07:41:37,980 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-18 07:41:37,981 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-18 07:41:38,004 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:41:38,004 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accMgr'
+2021-08-18 07:42:15,102 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-18 07:42:15,297 DEBUG o.s.c.a.ClassPathBeanDefinitionScanner [main] Identified candidate component class: file [C:\Users\Alec Patterson\OneDrive\Desktop\revature_repository\notes\beanExample\target\classes\dao\AccountDaoImpl.class]
+2021-08-18 07:42:15,313 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 9 bean definitions from class path resource [applicationContext.xml]
+2021-08-18 07:42:15,330 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-08-18 07:42:15,359 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-08-18 07:42:15,361 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-08-18 07:42:15,362 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-08-18 07:42:15,368 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accountDaoImpl'
+2021-08-18 07:42:15,373 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userMgr'
+2021-08-18 07:42:15,376 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'user1'
+2021-08-18 07:42:15,408 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'userDao'
+2021-08-18 07:42:15,409 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'accMgr'

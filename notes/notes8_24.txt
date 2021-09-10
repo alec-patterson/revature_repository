@@ -1,0 +1,20 @@
+what is a web Service?
+
+a web service is a generic term for an iteroperable 
+machine-to-machine software function that is hosted
+at a network addressable location
+
+a Web service has an interface, which hides the implementation
+details so that is can be used independently of the hardware or software
+platform
+
+
+
+
+Key elements of RESTful Services
+    Resources(\employees\1)
+    Request Verbs(GET,POST,..)
+    Request Headers (X-Auth)
+    Request Body (JSON data format)
+    Response Body (JSON data format)
+    Response Status codes (200,400)

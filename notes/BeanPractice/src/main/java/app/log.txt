@@ -1,0 +1,6 @@
+2021-08-17 15:48:21,863 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 15:48:21,962 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [beanFile.xml]
+2021-08-17 15:48:21,982 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'employeeDao'
+2021-08-17 15:50:12,558 DEBUG o.s.c.s.ClassPathXmlApplicationContext [main] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4bd31064
+2021-08-17 15:50:12,672 DEBUG o.s.b.f.x.XmlBeanDefinitionReader [main] Loaded 1 bean definitions from class path resource [beanFile.xml]
+2021-08-17 15:50:12,692 DEBUG o.s.b.f.s.DefaultListableBeanFactory [main] Creating shared instance of singleton bean 'employeeDao'

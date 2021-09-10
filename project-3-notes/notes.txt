@@ -1,0 +1,45 @@
+Matthew Oberlies email: matthew.oberlies@revature.com
+
+
+Possibilities
+Login??
+
+    Admin
+        can create quizzes
+        can create questions
+        can review multiple people scores (or All scores)
+    
+    User
+        can take quizzes
+        can accumulate points by taking quizzes
+        can see their previous quiz scores
+
+Alternatively,
+    User
+        can create quizzes
+        can create questions
+        can take quizzes
+        can accumulate points by taking quizzes
+        can see their previous quiz scores
+
+====================================================================================================
+
+Planning notes:
+
+In my opinion: People do both front-end and back-end
+
+multiple people assigned to a user story
+
+If possible try to derive other user stories from ones that are assigned.
+
+Methodology for building the application
+    Monolithic - should probably do
+    Microservices - Would show off more what we learned and also help us gain experience on it.
+
+====================================================================================================
+
+Data base
+
+User    
+    userId  serial
+    

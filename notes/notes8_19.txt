@@ -1,0 +1,76 @@
+ways of mapping beans:
+1. xml file. use <beans> and <bean> tags
+2. Annotations in java file
+3. manually created in java (haven't really seen)
+
+------------------------------------------------------------
+Connecting hibernate
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+add this dependency
+
+
+Need to add a library to connect to the appropriate database. 
+In our case we need to add one for postgreSQL
+
+
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+</dependency>
+
+Dependency needed to be added for postgreSQL
+
+
+add in application.properties
+## default connection pool
+spring.datasource.hikari.connectionTimeout=20000
+spring.datasource.hikari.maximumPoolSize=5
+
+## PostgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5433/reimburse
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+#spring.jpa.properties.hibernate.default_schema=sample
+spring.jpa.show-sql=true
+
+#drop n create table again, good for testing, comment this in production
+spring.jpa.hibernate.ddl-auto=none
+
+application properties uses specific key words
+
+
+-----------------------------------------------------------------------------
+creating a controllers
+
+@RestController
+@RequestMapping(path="/employees")
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeManager manager;
+
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+        return manager.findAll();
+    }
+}
+
+
+make our dao interface extend CrudRepository<class, primary key>
+CrudRepository contains build in functions for accessing our database. 
+
+to return from findAll():
+return StreamSupport.stream(dao.findAll().spliterator(), false)
+    .collect(Collector.toList());
+
+
+dao extensions that contain built in functions
+CrudRepository<class, primary key>
+JpaRespository<class, primary key>
+    @Query
+Repository<class, primary key>

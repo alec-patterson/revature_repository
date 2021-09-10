@@ -1,0 +1,47 @@
+Rest API (servlet) - spring framework - server side
+
+Angular - client side
+
+-------------------------------------------
+
+Spring - Java Framework 
+
+manager.Java
+    dao = new dao();
+    dao.create();
+
+
+
+Interface dao.Java
+
+
+mySQLDAO.java - implementation of dao.java
+
+
+inversion of control - pattern, design, integration
+
+
+making a bean configureation {
+    .xml
+        <?xml version="1.0" encoding"UTF-8"?>
+        <beans ....>
+            <context: annotation-config>
+
+        </beans> 
+}
+
+get a bean ex:
+AcccoutnManager mgr = (AccountManager) context.getBean("bean name");
+
+
+<bean id="userMgr" class="manager.UserManagerImpl">
+    <property name="role" value="Admin"></property>
+</bean>
+
+^^ this will set the role variable in the UserManagerImpl class to admin but you need to have a setter for that variable in the class implementation
+
+<bean id="referenceNameToThisBean" class="classWeWant">
+    <property name="VariableInClassToSet" value="ValueWeWantToSetItTo"></property>
+    <property name="VariableInClassToSet" ref="BeanWithClassWeNeed"></property>         // this like is for setting a variable in the class that is an object
+    <constructor-arg type="datatypeOfVariable" value="ValueOfVariable"></constructor-arg>
+</bean>

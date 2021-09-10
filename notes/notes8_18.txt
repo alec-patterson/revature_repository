@@ -1,0 +1,79 @@
+IoC containiner 
+
+Beans - class or instances
+BeanFactory
+
+ApplicationContext
+
+xml
+applicationContext.xml
+<beans>
+<bean id="name" class="class name">
+    <property name="" ref="ref is for adding a class"></property>
+    <property name="name of variable" value="value for variable"></property>
+    <constructor-arg type="data type" value="input for it"></constructor-arg>
+</bean>
+
+</beans>
+
+Annotations
+Java
+
+
+Inversion of Control - Design pattern
+class Account Mgr {
+    Dao dao = null;
+
+    setDao(Dao dao) {
+
+    }
+}
+
+Annotations we have seen:
+
+@Component
+
+@Controller
+
+@Test
+
+@BeforeClass
+
+@Before 
+
+
+-----------------------------------------------------------------------------------
+Spring boot
+
+all main has to have @SpringBootApplication
+
+
+[{"name":"Savings"}]
+
+@RestController
+@RequestMapping(path="/urlpath")
+public class someClass {
+
+    @GetMapping(path="", produces="application/json)
+    public type someMethod() {
+
+    }
+
+}
+
+@RestController
+@RequestMapping
+^^ both annotations are essentually like @WebServlet
+^^ the path declared above will be the path that tomcat needs to refer to to access the get/post
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create springboot project in Spring tool suite 
+
+main is in SpringbootSampleApplication (probably based on project name)
+@SpringBootApplciation needs to be above that class. 
+
+In main SpringApplication.run(SpringbootSampleApplication.class, args);
+
+controllers is where get and posts are done

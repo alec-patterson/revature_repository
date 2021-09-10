@@ -1,0 +1,229 @@
+Spring
+
+Why do we need spring?
+
+AbstractFactory pattern
+Factory pattern 
+
+// before spring
+class FileParserFactory {
+    
+    Parser getParser(String ext) {
+        Parser parser = null;
+        if(ext.equals(".csv")) {
+            parser = new CSVFileParser();
+        } else if(".xml") {
+            parser = new XMLFileParser();
+        }
+    }
+}
+CSVFileParser
+XMLFileParser
+XyzFileParser
+
+Controller {
+    Manager mgr new EmployeeManager();
+}
+
+
+dependency injection for java application
+enterprise level java application
+avoid repeated code
+light weight
+
+===========================================
+Bean configuration
+
+bean-config.xml //name doesn't really matter so long as it has the tags
+
+3 Methods:
+    XML
+    Annotations
+    Java Config 
+
+XML:
+<bean id="reference Name" class="com.revature.someClass"/> //can be self closing and can also have closing tag 
+
+<bean id="reference Name" class="com.revature.someClass">
+    <property name="other" ref="otherBean"/>
+    <constructor-arg type="datatype" value="value of arg">
+    <constructor-arg ref="diff bean">
+</bean>
+
+<bean id="diff reference" class="diff.class"/>
+
+Dependency Injection 
+Constructor
+property
+
+
+BeanFactory
+    creates bean
+    wires the dependencies
+
+ApplicationContext
+
+
+Scopes of the bean
+
+- Prototype - multiple instances
+- Singleton - single instance (default)
+
+- request
+- session
+- application
+
+Lifecycle of the bean
+
+Instantiated/initialized
+properties Singleton
+bean aware
+destroy
+
+
+Annotations (need to add <context:component-scan base-package="location of beans"/> into bean-config.xml)
+
+@Autowired - sets a variable within a bean automatically (no need for setter in class)
+@Component - will make a class a bean
+@Respository
+@Service
+@Controller - creates a bean for DispatcherServlet
+
+========================
+
+yaml - yet another markup language
+
+beans:
+    bean:
+        id:
+
+
+==========================
+
+Spring MVC
+
+MVC - Model View Controller
+Architectural pattern - UI
+
+Servlets
+
+/userServlet
+/customerServlet
+/loginServlet
+
+made multiple Servlets
+
+===
+
+spring.DispatcherServlet - front Controller
+
+@ResponseBody at the method level will make anything you return into json
+@RestController at the class level implied @ResponseBody at method level and @Controller at class level
+
+GET http://localhost:8080/users
+
+@Controller
+@RequestMapping(path="/users")
+class UserController {
+
+    @GetMapping
+    public @ResponseBody String getMessage() {
+        return "hello";
+    }
+
+}
+
+@RestController
+@RequestMapping(path="/users")
+AccountController {
+    
+    @GetMapping
+    public String getMessage() {
+        return "hello";
+    }
+
+}
+
+@RequestMapping above method
+    Equivalent to GetMapping and PostMapping however it requires you to specify which method it instance
+    Ex:
+        @RequestMapping(path="/users" method="RequestMethod.GET")
+
+=======================================
+Webservices
+
+SOAP - Simple object access protocol
+XML over http
+
+SOAP XML
+
+Envelope
+Head
+Body 
+
+REST - Representational state transfer
+Architectural style
+
+API
+
+HTTP protocolHTTP methods - CRUD
+Resources /users
+/employees
+HATEOAS
+
+Content Negotiation
+
+HTTP headers
+Content-Type: 'applciation/json'
+
+URL
+employees.json
+employees.xml
+
+Richardson Maturity Model
+
+URI, Http Method and HATEOAS
+
+4 levels of Maturity 0-3
+
+
+===========================================
+
+RestTemplate - used to communicate between Services (or controllers)
+
+RestTemplate temp = new RestTemplate();
+
+============================================
+
+AOP - aspect oriented programming
+
+user to implement more reusable approach of cross cutting concerns
+
+Aspect - cross cutting concern
+Advice - before, after, around, exception, finally
+JoinPoint - method affected by pointcut
+Pointcut - rule to apply aspect @Before(excution(* com.revature.EmpManager.*.(*)))
+
+===========================================
+
+ORM - Object relational mapping
+
+Helps to map relational database to our java application
+Hibernate - ORM framework
+
+Spring ORM 
+
+
+Spring Data 
+
+JPA - Java Persistence Architecture
+
+@Entity
+@Column
+
+JPARepository
+
+findEmployeesByGender()
+
+@Transactional
+

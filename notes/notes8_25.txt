@@ -1,0 +1,7 @@
+3 - level
+2 - uri and use all http methods
+1 - http POST
+0 - http post and uri is also not standard
+
+===================================================
+

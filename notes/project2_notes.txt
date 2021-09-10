@@ -1,0 +1,40 @@
+User stories
+1. As an employee I can log into my account
+2. As an employee I can create a Reimbursement Request
+3. As an employee I can view any Reimbursement Request I previously submitted
+4. As a Financial Manager I can log into my account
+5. As a Financial Manager I can View any/all employee Reimbursement Requests
+6. As a Financial Manager I can approve/deny an Employee's Reimbursement Request
+7. (potential) As an employee I can edit a Reimbursement request                        // either pre status change || post status change for re-evaluation
+8. (potential) As an employee I can save a draft of a Reimbursement Request that i can
+    edit before submition
+
+
+Make database and then make an sql file with ddl to distribute to everyone else
+
+Data Base: 
+
+login {
+    login_id: serial    // Primary key
+    email: varchar
+    username: varchar
+    password: varchar
+}
+
+ticket {
+    request_id: serial      // Primary key 
+    employee_id: int        // foriegn key to employee table
+    type: varchar
+    description: varchar
+    amount: float
+    time: timestamp
+    status: varchar
+}
+
+employee {
+    employee_id: serial     // primary key
+    login_id: int           // foriegn key to login table 
+    role: varchar
+}
+
+merged employee and login (added first and last name as well)

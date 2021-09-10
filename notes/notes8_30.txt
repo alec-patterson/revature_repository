@@ -1,0 +1,29 @@
+Service Oriented Architecture (SOA)
+
+Monolithic Software Architecture
+
+Web UI
+
+Web Services
+project-1
+- Customer Service/Manager
+- Employee Service/Manager
+- Inventory Service/Manager
+Data access
+
+
+One Signle deployable unit
+project-1.jar 
+
+
+producer-Service
+spring boot app with a controller, that return some object
+/producer/Service
+
+consumer-Service
+spring boot app with a controller, that accesses consumer service endpoint
+RestTemplate tmpl = new RestTemplate();
+tmpl.getForEntity
+tmpl.getForObject
+tmpl.exchange
+
