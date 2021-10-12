@@ -1,0 +1,12 @@
+Spring projects/modules
+
+spring framework - framework in java that helps us make enterprise grade applications (typically web)
+    framework is made up of modules 
+        spring ORM
+        spring JDBC
+
+        modules are things that spring supports within it. 
+
+spring projects are external to spring itself and builds on top of the spring framework
+    Ex. spring boot, spring security
+

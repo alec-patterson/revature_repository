@@ -1,0 +1,2447 @@
+Java Full Stack Review Questions
+
+Java
+
+Basics
+1. What is Java? / Explain some features of Java
+
+    Java is an OOP (Object Oriendted Programming) language. It is a High level, compiled, strongly typed programming language.
+    Java is platform independent, C-language enspired syntax, extensive build-in runtime libraries, supported by the Oracle corperation,
+    has a rich open source community
+
+2. What is JRE / JDK / JVM?
+
+    JVM: Java Virtual Machine - Converts the java code into byte code that the Operating system can read, it is operating system specific so there
+        are different JVM's for each operating system.
+    JRE: Java Runtime Environment - contains all runtime libraries that are necessary for running a java program.
+    JDK: Java Development Kit - contains a compiler and interpreter for running java code as well as the JVM and JRE so the code can be run. 
+
+3. What is the difference between an object and a class?
+
+    Object: is the instance of a class
+    Class: is a blueprint of how an object is supposed to be. It is represented by fields and methods.
+
+4. What is the root class from which every class extends?
+
+    Object: The Object class is what every class (either directly or through mulit-level inheritance) extends. It contains a number of 
+        build in methods that every class will be able to use. 
+
+        toString(), finalize(), hashCode(), equals(Object o), clone(), getClass(), notify(), notifyAll(), wait(), wait(long timout), wait(loign timeout, int nanos) 
+
+5. What are the primitive data types in Java?
+
+    boolean
+    byte
+    short
+    char
+    int
+    long
+    float
+    double
+
+6. Where are Strings stored?
+
+    Strings are stored on the stack and the heap. A String is class in itself. So the reference to our string is placed on the stack
+    while the instance of our string is placed in the heap. (look into string pool?)
+
+7. Explain stack vs heap
+
+    Stack: Stores method invocations and reference variables into stack frameworks
+    Heap: is a central location in memory where all objects are stored
+
+    a. Are variable references stored on the stack or heap? What about the objects they
+        refer to?
+
+        Variable references are stored in the stack. They refer to the Object instance.
+
+    b. What is a stack frame? When are these created?
+
+        Stack Frame: is a collection of all information on the stack pertaining to a subprogram call. A stack frame is created every time
+        a method is called.
+
+8. What are annotations?
+
+    Annotations: are special constructs that provide metadata about the source code to the compiler and the JVM. They can be used
+        to enforce rules in the code, or to abstract some functionality provided by a library or framework. (commonly used with the Reflection API)
+
+9. What is a POJO vs a bean?
+
+    POJO: Plain Old Java Object - is your typical object in java. Not bound by any special restriction other than those forced by the java language specification and
+        not requiring any classpath.
+        POJOS should not:
+            1. extend prespecified classes
+            2. implement prepecified interfaces
+            3. contain prespecified annotations
+    
+    Beans: Beans are pojos that uses metadata in an xml file to be assembled. 
+
+10. Can you force garbage collection in Java? When is an object eligible for GC?
+
+    Yes you can force garbage collection in java. An Object is eligible for garbage collection when any/all references to that object
+    go out of scope and there is no way for the object to be accessed. 
+
+11. Why are strings immutable in java? How would you make your own objects immutable?
+
+    Strings are immutable in java because of the security, synchronization and concurrency, caching, and class loading. 
+    You can make your own objects immutable by making a class final, making fields private, and not adding a setter. 
+
+12. What is the difference between String, StringBuilder, and StringBuffer?
+
+    String: is immutable, collection of characters. 
+    StringBuilder: mutable, Not synchronized
+    StringBuffer: mutable, Synchronized
+
+    StringBuilder and StringBuffer have build in functions like .append() and .insert()
+
+13. What are the different variable scopes in Java?
+
+    Instance/object
+    class
+    method
+    block
+
+14. What are the access modifiers in Java? Explain them.
+
+    public - Available anywhere
+    private - Only within the same class
+    protected - Within the same pachage, and this class' sub-classes
+    default - within the same package
+
+15. What are the non-access modifiers in Java?
+
+    final - Variable: cant be changed, Class: cant be extended, Method: cant be overriden
+    static - denotes class scope makes it available without an instance being needed
+    transient - marks a variable as a non0serializable, meaning it will not be persistend when written to a byte stream
+    abstract - Class: cannot be instantiated, Method: cant have an implementation (only method signature)
+    synchronized - relevant to threads and preventing deadlock phenomena
+    volatile - marks a variable to never be chached thread-locally
+    strictfp - restricts floating point calcualtions for portability
+
+16. ‘What is the difference between static and final variables?
+
+    Static makes objects class scoped. They do not need an instance in order to be accessed or manipulated. If a static variable is manipulated then
+    the change is made across all instances of that object. 
+
+    Final makes a variable unchangable after instantiation. 
+
+17. What are the default values for all data types in Java?
+
+    boolean - false
+    char - ''
+    byte, short, int - 0
+    long - 0L
+    float - 0.0F
+    double - 0.0d
+
+18. What is a wrapper class? List them.
+
+    A Wrapper class a class for primitive data types making them into objects
+
+    Boolean, Character, Byte, Short, Integer, Long, Float, Double
+
+19. What is autoboxing / unboxing?
+
+    Autoboxing the the automatic conversion of a primitive type to a wrapper class
+    unboxing is the conversion of a wrapper class to a primitive type
+
+20. Is Java pass-by-value or pass-by-reference?
+
+    Java is pass-by-value
+
+21. What makes a class immutable?
+
+    make class final, make the fields final and private, dont provide any methods to change the objects state
+
+22. If two objects are equal, do they have the same hashcode? If not equal?
+
+    Yes if the two objects are equal they ahve to have the same hashcode. However if they are not equal there is still a chance they could have
+    the same hash code
+
+23. What data types are supported in switch statements?
+
+    characters, strings, int, short, and byte
+
+24. List all non-access modifiers
+
+    static, final, abstract, volitile, synchronized, transient, strictfp
+
+25. How to pass multiple values with a single parameter into a method?
+
+    You can use varargs - under the hood it creates an array at runtime
+    Arrays
+
+26. What is a static block?
+
+    A static block is a set of instructions that is run only once when a class is loaded into memeory.
+
+27. What are static imports?
+
+    a static import allows us to access the static members of a class directly without class name or any object. 
+
+28. What methods are available in the Object class?
+
+    toString(), finalize(), hashCode(), equals(Object o), clone(), getClass(), notify(), notifyAll(), wait(), wait(long timout), wait(loign timeout, int nanos) 
+
+29. What is the difference between == and .equals()?
+
+    == will compare the memory address that a reference refers to. .equals() on does the same thing unless it is overloaded.
+
+30. What is an enhanced for loop and what is a forEach loop?
+
+    forEach loop uses a fucntional interface to loop through an object that implements the Iterable interface and perform a specific action.
+    
+    An enhanced for loop creates a variable of the type contained within the object that implements the Iterable interface and though every
+    loop that variable is set to the next value in the object. 
+
+31. What are the 3 usages of “super” keyword?
+
+    super variable refers immediate parent class instance.
+    super variable can invoke immediate parent class method.
+    super() acts as immediate parent class constructor and should be the first line in child class constructor
+
+32. What is the first line of any constructor?
+
+    super() - this will invoke the constructor of the parent class
+
+33. How would you perform constructor chaining?
+
+    constructor chaining can be done using the this() function. The paramters of the this() function should match the overloaded constructor that you want to call.
+
+34. What happens if you don’t define a constructor for a class? Can you still instantiate it?
+
+    Yes, you can instanciate an object of a class that doesn't you didn't define a constructor for. If a constructor is not defined then a default one 
+    will be provided for us. The default constructor is a no-arg constructor and only calls super() and if a constructor with arguments is defined but a no arg 
+    constructor isn't then a default constructor will not be provided to the class.
+
+
+
+
+OOP
+
+1. What are the 4 pillars of OOP? Explain each and give examples of you implement them
+in Java code
+
+    Abstraction - Like information hiding. Abstraction can be used when you dont want a particular class to be instanciated by 
+        itself. Means that the information we are abstracting is more general. Ex. interfaces usabstraction
+
+        Revpro def: a programming principle in which we centralize common characteristics and generalize behavior into conceptual classes. 
+
+    Encapsulation - Containing related state and behavior together inside a class, also hiding and preventing change to an object's data members
+        Ex. classes
+    Inheritance - Allowing one class to inherite all non private fields and methods using the extends keyword. Extends functionality
+        of another class. Ex. having a class extend another class
+    Polymorphism - means "taking on many forms", it describes how objects can behave differently in different contexts. Ex. Method overloading and Method overriding 
+
+2. Explain the principles of the SOLID acronym
+
+    SOLID is a mnemonic acronym for five design principles intended to make software designs more understandable, flexible, and maintainable
+
+    S - Single-responsibility principle - every class should have only one responsibility
+    O - Open-closed principle - software entities should be open for extension, but closed for modification
+    L - Liskov substituation principle - functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it. 
+    I - Interface segregation principle - many client-specific interfaces are better than one general-purpose interface
+    D - Dependency inversion principle - depend upon abstractions, concretions. 
+
+3. What is the difference between an abstract class and an interface?
+
+    An interface can only have abstract methods (or methods are by default abstract unless given static or default) where classes can have concrete methods.
+    variables in an interface are public and final by default. Classes can have non-final variables.
+    interfaces can only have static and final variables. Classes can have final, non-final, static and non-static
+
+4. Can abstract class have concrete methods? Can concrete (non-abstract) classes
+have abstract methods?
+
+    An abstract class can have concrete methods. However, if a class has an abstract method then it must be an abstract class.
+
+5. Can static methods access instance variables? Can non-static methods access static
+variables?
+
+    Static methods cannot access instance variables. However, non-static methods can access static variables. 
+
+6. What are the implicit modifiers for interface variables? methods?
+
+    public, static, and final for variables. 
+    public abstract for methods. 
+
+7. What is the difference between method overloading and overriding? What are the rules
+for changing the method signature of overloaded methods?
+
+    Method overloading is when there exist two or more methods in a class with the same method name, but different
+        method signatures by changing the parameter list
+
+    Method overriding is when a method in a child class has the same method signature as the method in the parent class, but with a
+        different implementation
+
+8. Can you overload / override a main method? static method? a private method? a default
+method? a protected method?
+
+    The main method in a way can be overloaded but the real main method must call the overloaded method. 
+    a static, private, default, and protected method can be overloaded
+
+9. What are covariant return types? What rules apply to return types for overridden
+methods?
+
+    The covariant return type specified that the return type may vary in the same direction as the subclass. 
+    It makes it possible to change the return type when method overriding. 
+
+10. When do you use extends or implements keywords?
+
+    Extends is when a class inherites from another class
+    implements is when a class inherites from an interface
+
+11. What are enumerations (enums)?
+
+    enums are a special data type that enables for a variable to be a set of predefined constants.
+
+12. What are the implicit modifiers for interface variables / methods?
+
+    all variables are public, static, and final implicitly
+    all methods are public implicitly
+
+
+
+
+Collections / Generics
+
+1. What are collections in Java?
+
+    A framework that provides an architecture to store and manipulate the group of objects.
+    Can perform operations such as searching, sorting, insertion, manipulation, and deletion.
+
+2. What are the interfaces in the Collections API?
+
+    Set, SortedSet, NavigableSet, Queue, BlockingQueue, TransferQueue, Deque, BlockingDequeue
+
+3. What is the difference between a Set and a List?
+
+    Sets do not retain their order and cannot have duplicates
+    Lists retain their order and can have duplicates 
+
+4. What is the difference between an Array and an ArrayList?
+
+    Array is a contingous block of memory storing a group of sequentially stored elements of the same type. They have a fixed size and cannot be resized after declaration
+    
+    ArrayList is a concrete class which implements List. it is a data structure that contains an array within it, but can resize dynamically. Once it hits maximum compacity
+    an arraylist will increase it's size by 50% by copying its elements into a new array.
+
+5. What is the difference between ArrayList and Vector?
+
+    They both use arrays internally as a data Structure. They can both be dynamically resizable the difference is how they resize themselves.
+    ArrayList adds 50% of it self whereas vectors double its size. 
+
+    Also vector methods are synchronized while ArrayLists are not.
+
+6. What is the difference between TreeSet and HashSet?
+
+    HashSet implements Set and is backed by a HashMap. It guarantees no ordering when iterating, Allows one null value, Allows fast insertion and traversal,
+    does not maintain order in which you insert elements
+
+    TreeSet is a set whose elements maintain sorted order when inserted. Internally it is backed by a sorted tree. Insertion and removal of elements is slow, because elements
+    must maintain sorted order. Cant contain null.
+
+7. What is the difference between HashTable and HashMap?
+
+    Both store key and value pairs in a hash table. HashMap is non-synchronized where HashTable is. HashMap can contain one null key and multiple null values
+    Where as a HashTable cant have any null keys/values.
+
+8. Are Maps in the Collections API? What makes Map different from other interfaces?
+
+    maps are not apart of the Collections API. Maps do not extend Iterable and therefore cannot be apart of the Collections API 
+
+9. List several ways to iterate over a Collection. How would you iterate over a Map?
+
+    You can iterate through a collection with an Iterator, forEach, for loop, enhanced for loop
+
+10. What is the purpose of the Iterable interface? What about Iterator?
+
+    Iterable interface allows an object to be the target of enhanced for loop (for-each loop)
+
+    Iterator interface allows us to access elements of the collection and is used to iterate over the elements in the collection(map, list or set)
+
+11. What is the difference between the Comparable and Comparator interfaces?
+
+    The comparable interface which defines the natural ordering for a class. A class must implement Comparable if it is to be sorted by the compareTo() method
+        the compareTo() method returns and int: neg if object is less that param, 0 if object is equal to param, pos if object is greater than the param.
+    
+    Comparator is an interface which allows you to define a total ordering on some collection of objects. A class that is to be sorted by compare() does not have
+    to implement Comparator
+
+    compareTo() compares the Object to the param.
+    compare() compares two params to eachother. 
+
+12. What are generics? What is the diamond operator (<>)?
+
+    Generics are constructs introduced in Java 5 which enforce compile time safety by allowing you to user parameterized types. 
+
+    <> are used for declaring the generic type or setting the generic type. 
+
+13. Create and instantiate a generic class. Create and use a generic method.
+
+    public class genericClass<T> {
+        private T variable;
+
+        public T getVariable {
+            return this.variable;
+        }
+
+        public void setVariable(T variable) {
+            this.variable = variable;
+        }
+    } 
+
+
+
+
+
+Threads
+
+1. What is multi-threading?
+
+    Multi-threading extends the idea of multitasking into application where you can subdivide operations in a single application into
+    individual, paralle threads. 
+
+2. In what ways can you create a thread?
+
+    A thread can be created using the Thread class and/or the Runnable Interface
+
+3. List the methods in the Thread class and Runnable interface
+
+    Thread Class:
+        start() - to actually begin thread execution after instantiation
+        interrupt() - to explicitly interrupt
+        isAlive, isInterrupted() and isDaemon() - all used to test the state of the thread
+        join() - to wait for the thread to finish execution
+        Getters and setters for id, name, and priority
+
+        Static methods:
+            Thread.currentThread() - which returns the thread that is cureently executing
+            Thread.sleep(long millis) - which causes the currently executing thread to temporarily stop for a specified number of milliseconds
+
+    Runnable Interface:
+        Must override the run() method
+        Pass an instance of the class into a thread constructor
+        call start() on the thread. 
+
+4. Explain the lifecycle of a thread
+
+    New - newly created thread that has not started executing
+    Runnable - either running or ready for execution but waiting for its resource allocation
+    Blocked - waiting to acquire a monitor lock to enter or re-enter a synchronized block/method
+    Waiting - waiting for some other thread to perform an action without any time limitations
+    Timed_Waiting - waiting for some other thread to perform a specific action for a specified time period
+    Terminated - has completed its execution
+
+5. What is deadlock?
+
+    deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process
+
+6. What is the synchronized keyword?
+
+    Synchronized keyword ensures that only one thread is accessing a resource at any given time
+
+
+
+
+
+IO / Serialization
+
+1. How do you serialize / deserialize an object in Java?
+
+    Serialize means to convert an object's state to a byte stream so that they byte stream can be reverted back into a copy of the object. Must implement the java.io.Serializable
+    interface. or the java.io.Externalizable
+
+    Deserialize means to convert the byte stream back into an object. 
+
+    Methods for performing serialization and deserialization
+        writeObject(Object o)
+        readObject(Object o) 
+
+2. What is a Marker interface? What does Serializable interface do?
+
+    A marker interface is an interface that has no methods or constants inside it. It provides runtime type information about objects. 
+
+    The Serializable interface has a marker that is check when calling methods like ObjectOutputStream.writeObject() method. 
+
+3. What are transient variables?
+
+    transient variables are a variable that can not be serialized. So if variables are marked as transient then they will not be apart of the 
+    persistent state of an object. 
+
+4. Difference between FileReader and BufferedReader?
+
+    Both classes are used to read data from a given character stream. FileReader will read data byte by byte from the file where as a BufferedReader
+    can read data in large amounts at a time.
+
+5. Explain the try-with-resources syntax
+
+    try with resources is autoclosing and the resource is both declared and intiialized inside the try
+
+    try(type resource = new type()) {}
+
+6. List some methods in the Scanner class
+
+    close()
+    next()
+    hasNext()
+    next[Type]()    Ex. nextInt()
+    hasNext[Type]() Ex. hasNextInt()
+
+
+
+
+
+
+
+Exceptions
+1. What is the difference between final, .finalize(), and finally?
+
+    final - non-access modifier
+        Class: cannot be extended
+        Method: Cannot be overriden
+        Field: Value cannot be changed after LazyInitialization
+    
+    .finalize() - method in the Object class
+        This method is called to let the Garbage collector know that it is ready to be collected
+
+    finally - is used with a try-catch block. It is a block of code that will execute regardless of an exception being thrown
+
+2. Explain throw vs throws vs Throwable
+
+    throw - is a keyword in java used to explicitly throw an exception from a method or any block of code. 
+
+    throws - is a keyword in java which is used in the signature of a method to indicate that this method might throw one of the listed type exceptions. 
+
+    Throwable - Throwable class is the superclass of every error and exception in the java language. 
+
+3. Do you need a catch block? Can you have more than 1? Is there an order to follow?
+
+    No you do not need a catch block. You can have multiple catch blocks to catch different types of exceptions and handle them differently.
+    The order is the order in which they are defined. When an exception is thrown it will check each one in order to see if it matches. 
+
+4. What is base class of all exceptions? What interface do they all implement?
+
+    Throwable is the base of all exceptions. The interface it implments is the Serializable interface. 
+
+5. List some checked and unchecked exceptions?
+
+    checked: IOException, FileNotFoundException, NumberFormatException
+
+    unchecked: Exceptions like dividing a number by 0;
+
+6. Multi-catch block - can you catch more than one exception in a single catch block?
+
+    Yes you can. You can catch more than one exception in a single catch trying to catch Exceptions that are parents to the exception being thrown
+    The biggest and easiest example would be to catch Exeception as all Exceptions extend this class. Therefore it will catch all of them. 
+
+
+
+
+
+
+Reflections API
+1. What is Reflection API?
+
+    Java Reflection is a process of examining or modifying the run time behavior of a class at run time.
+
+    The Reflection API is mainly used in:
+        IDE (Itegrated Development Environment) e.g., Eclipse, MyEclipse, NetBeans etc.
+        Debugger
+        Test Tools etc.
+
+2. What can you do with the Reflections API that you can’t do in normal code?
+
+    Inspection of interfaces, classes, methods, and fields during runtime is possible using Reflection
+    It is also possible to call methods, instantiate a clear or to set the value of fields using Reflection
+
+    Drawback:
+        Exposure of internals, using reflection, one can break the prinicples of encapsulation.
+        performance overhead, since the types in reflection are resolved dynamically, JVM optimization cannot take place.
+
+3. List some classes and methods of the Reflections API
+
+    Classes:
+        Field
+        Method
+        Constructor
+    
+    Methods:
+        getDeclaredMethods()
+        getDeclaredFields()
+        newInstance()
+
+
+
+
+
+
+Design patterns
+
+1. What are Singleton / Factory design patterns?
+
+    Singleton - is a design pattern which allows the creation of an object in memory only once in an application and can be shared across multiple classes.
+        It can be useful for services in an application, or other resources like a connection or thread pool
+
+    Factory - is a design pattern which creates objects in which the precise type man not be know until runtime. To make a factory, use:
+        Abstract data type
+        Classes that inherit the abstract data type (the objects whose instantiation details may not be known until run time)
+        Static method that returns a concrete instance, whose return type is the abstact data type in (1)
+
+2. How would you create a Singleton?
+
+    Private static variable of the class' type
+    private constructor - to prevent arbitrary object creation
+    public static getInstance() method, which will either instantiate the object or return the instance in memory
+
+3. Explain the DAO design pattern
+
+    Data Access object Pattersn or DAO pattern is used to separate low level data accessing API or operations from high level business services. 
+
+
+
+
+
+
+JDBC
+
+1. What is JDBC?
+
+    Java Database Connectivity - a relatively low-level API used to write java code that interacts with relational databases via SQL
+
+2. What are the core interfaces / classes in JDBC?
+
+    Located in the java.sql and javax.sql packages.:
+        DriverManager class - to make a connection with the database server
+        DataSource interface - for retrieving connections, an alternative to DriverManager
+        Connection interface - represents a physical connection with a database
+        SQLException class - a general exception thrown when something goes wrong when accessing the database
+        Statement interface - used for executing static SQL statements
+        PreparedStatment interface - represents pre-compiled SQL statements
+        CallableStatment interface - used to execute stored procedures
+        ResultSet interface - represents data returned from the database
+
+3. What is a stored procedure and how would you call it in Java?
+
+    PL/SQL code that can be executed in certain ways and has some properties:
+        they don't return anything
+        they may or may not contain IN (by value) and OUT (by reference) parameters 
+        they allow any DML statements within 
+            these means transactions can be created in a stored procedure.
+        Stored procedtures can class other precedures and functions
+        can NOT use stored procedures in DML statements
+            EXEC STORED_PROCEDURE
+
+    To access/call a stored procedure you would use the CallableStatement interface
+    CallableStatement Interface is used to execute stored procedures. You create an isntance of a CallableStatment by calling the prepareCall() method on a connection
+        object. A CallableStatement can return one ResultSet object or multiple ResultSet objects.
+
+    CallableStatement stmt = conn.prepareCall("{call myprocedure(?,?)}");
+
+4. What is the difference between Statement and PreparedStatement?
+
+    Statement interface is used for executing static SQL statements.
+    PreparedStatement interface is used for executing pre-compiled SQL statements
+
+5. Steps to executing an SQL query using JDBC?
+
+    Statement stmt = conn.createStatement();
+    ResultSet rs = stmt.executeQuery("insert query here");
+
+6. How to execute stored procedures using JDBC?
+
+    (Ex.)
+    CallableStatement stmt = conn.prepareCall("{call myprodedure(?,?)}")
+    stmt.setInt(1, 1011);
+    stmt.setString(2, "John");
+    stmt.execute();
+
+7. Which interface is responsible for transaction management?
+
+    Connection Interface
+
+
+
+
+
+
+JUnit
+
+1. What is JUnit?
+
+    JUnit testing is the testing of indivisual software components in isolation from the rest of the system. This is done by writing unit tests which
+        execute the code we want to inspect.
+
+2. What is TDD?
+
+    Test-Driven Development - process consists of writing until tests first, before the application code has been written. 
+
+3. What are the annotations in JUnit? Order of execution?
+
+    @BeforeClass - declares a setup method that runs once, before all other methods in the class
+    @Before - declares a setup method that runs before each test method 
+    @After - declares a tear-down method that runs before each test method.
+    @Test - declares a method as a test method  
+    @AfterClass - declares a tear-down method that runs once, after all other methods in the class
+
+    ** Order of execution is the order they are placed in above. 
+
+4. Give an example of a test case
+
+    Testing credentials with a database to allow a user to login. (i.e. testing a username and password in the database to be correct or incorrect)
+
+    Ex.
+        @Test
+        public void TestLogin() {
+            Employee user = new Employee("username", "password");
+            Employee login = userManager.findLogin(user);
+            if(user.getPassword().equals(login.getPassword())) {
+                assertTrue(user.getPassword().equals(login.getPassword()))
+            }
+        }
+
+5. How would you prevent a test from being run without commenting it out?
+
+    @Ignore annotation 
+
+
+
+
+
+
+Log4j
+
+1. What are the advantages to using a logging library?
+
+    Logging records events that occur during software execution. As users execute programs on the client side, the system accumulates log entires for support teams.
+    It allows for developers to access information about applications to which we do not have direct access. Without logs, we would have no idea of knowing what went 
+    wrong when an application crashes, or track and monitor application performance. 
+
+2. What is log4j?
+
+    logj4 is a reliable, fast, and flexible logging framework for java supported by Apache. It's commonly used to record application events, 
+        log granular debugging information for developers, write exception events to files. 
+
+3. What are the logging levels of log4j?
+
+    ALL - all levels
+    Debugger - designates fine-grained informaitonsl events that are most useful to debug an applciation 
+    INFO - informational messages that highlight the progress of the applciation at the coarse grained level 
+    WARN - designates potentially harmful situations
+    ERROR - designates error events that might still allow the application to continue running
+    FATAL - severe error events that presumably lead the application to abort
+    OFF - highest possible level, intended to turn off logging 
+
+
+
+
+
+Maven
+
+1. What is Maven?
+
+    Maven - is a tool that can be used for building and managing any java-based project.
+
+    Maven helps:
+        Simplifies the build process
+        Adding jars and dependencies
+        Documenting project information with change logs and repositories
+        integration with source control systems (Git)
+
+    Features of Maven that we will go over
+        project Object Model (POM)
+        Maven lifecyclesmeven repositories
+        Maven Project coordinates
+
+2. What is the default Maven build lifecycle?
+
+    Validate - project is correct and all necessary information is available 
+    Compile - compiles project source code 
+    Test - tests all compiles code 
+    Package - packages all compiles code to WAR/JAR file 
+    Integration - performs all integration tests on WAR/JAR
+    Verify - runs checks on the results of integration tests 
+    Install - installs WAR/JAR to local repository 
+    Deploy - copies final WAR/JAR to the remote repository
+
+3. Where / when does Maven retrieve dependencies from? Where are they stored locally?
+
+    Maven retrieves dependencies during the "builds" of a java project. Maven dependencies are stored both locally and in a central repository. 
+        The local repository is in the $HOME/.m2/repository folder, while the central repository is accessible at https://mvnrepository.com
+
+4. What is the POM and what is the pom.xml?
+
+    Project Object Model - Contains information about the project used to build the project including project dependencies and plugins
+    pom.xml - File in which Maven project configureation and dependencies are handles via the Project Object Model. 
+
+5. What defines Maven project coordinates?
+
+    group-id: the group, company, team, organization, project, or other group
+    artifact-id: A unitque identifier under groupId that represents a single project
+    version: a specific release of a project. Projects that have been released have a fixed version identifier that refers to a specific version of the project.
+        Projects undergoing active development can use a special identifier that marks a version as a SNAPSHOT.
+    packaging: the type of project, defaulting to jar, describing the packaged output produced by a project. A project with packaging jar produces a JAR archive;
+        A project with packaging war produces a web application. 
+
+
+
+
+
+
+Advanced
+
+1. What are functional interfaces? List some that come with the JRE for Java 8
+
+    Functional interfaces are interfaces that have only one abstrcat method. This method is what lambdas are impoementing when they are declared
+        the parameter types and return types of the lambda must match the fucntional interface mehtod declaration. 
+
+    Example of one is the .forEach() method that comes with the Iterable interface. 
+
+2. What are lambdas?
+
+    Lambda expressions are one of the biggest new features of Java 8, and they introduce some important aspects of functional programming to java. 
+    Syntax follows:
+        parameter(s) -> expression
+
+3. What is try-with-resources? What interface must the resource implement to use this feature?
+
+    the try-with-resources statement is a try statement that declares one or more resources. A resource is an object that must be closed after the program is finished
+        with it. The try-with-resources statement ensures that each resource is closed at the end of the statement. Any object that implements java.lang.AutoCloseable, 
+        which includes all objects with implement java.io.Closeable, can be used as a resource. 
+
+4. How to make numbers in your code more readable?
+
+    !!!!!!!!!!!!!!!!!!!!
+
+5. Which collections cannot hold null values?
+
+    HashMap - accepts one null key, any number of null values.
+    HashTable - doesn't accept any null keys, any number of null values.
+    TreeMap - doesn't accept any null keys, any number of null values.
+    LinkedHashMap - accepts one null key, any number of null values. 
+    HashSet - accepts one null element
+    TreeSet - doesn't accept any nulls
+    LinkedHashSet - accepts one null element
+    List - any number of nulls
+    ArrayList - any number of nulls
+    LinkedList - any number of nulls
+
+6. If 2 interfaces have default methods and you implement both, what happens?
+
+    You will be forced to override the method that you want to use in the class that is implementing them both. The compiler will not be able to determine Which
+        method you are calling. 
+
+7. If 2 interfaces have the same variable names and you implement both, what happens?
+
+    You can access the variable using the interface name. 
+
+8. Why does HashTable not take null key?
+
+    In order to successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method.
+    Since null is not an object, it con't implement these methods. HashMap is an advanced version and improvement on the HashTable. 
+
+9. What new syntax for creating variables was introduced with Java 10?
+
+    As of java 10, the var keyword allows local variable type inference, which means the type for the local variable will be inferred by the compiler,
+        so you don't need to declare that. 
+
+    Ex. var id=0;
+
+10. Is there an interactive REPL tool for Java like there is for languages like Python?
+
+    Yes jshell, introduced in java 9
+
+11. What are collection factory methods?
+
+    Factory methods are special type of static methods that are used to create unmodifiable instances of collections.
+    Adding new element will throw java.lang.UnsupportedOperationException
+
+    List<String> list = List.of("Java", "JavaFX", "Spring", "Hibernate", "JSP");
+    Set<String> set = Set.of("Java", "JavaFX", "Spring", "Hibernate", "JSP");
+    Map<Integer,String> map = Map.of(101, "JavaFX", 102, "Hibernate", 103, "Spring MVC");
+
+
+
+
+
+SQL
+1. Explain what SQL is. What are some SQL databases?
+
+    SQL - Structured Query Language - it is a domain-specific language for working with certain databases called relational databases. 
+
+    MySQL, Postgres, Oracle, MS SQL server, IBM DB2 are SQL databases
+
+2. Draw a simple ERD for modelling Students and Classes
+
+    // Many to many relationship requires a join table.
+
+    Students
+    student_id: serial primary key
+    first_name: varchar not null
+    last_name: varchar not null
+
+    Classes
+    class_id: serial primary key
+    class_name: varchar not null
+
+    student_class
+    student_class_id: serial primary key
+    student_id: int4 foreign key
+    class_id: int4 foreign
+
+3. What are the 5 sublanguages of SQL? Which commands correspond to them?
+
+    DQL: Data Query Language - SELECT
+    DML: Data Manipulation Language - INSERT, UPDATE, DELETE (SELECT is considered DML in oracle databases)
+    DDL: Data Definition Language - CREATE, ALTER, DROP, TRUNCATE
+    TCL: Transaction Control Language - COMMIT, ROLLBACK, SAVEPOINT
+    DCL: Data Control Language - GRANT, REVOKE
+
+4. What is the difference between DELETE, DROP, and TRUNCATE commands?
+
+    DELETE - will delete a specified row from the data base. 
+    DROP - will remove the whole table.
+    TRUNCATE - will delete all rows inside of the table but will not delete the table itself. 
+
+5. What are some SQL clauses you can use with SELECT statements?
+
+    FROM, WHERE, GROUP BY, HAVING, ORDER BY
+
+6. What is the difference between WHERE and HAVING?
+
+    Where clause is used to filter the records from the table based on the specified conditional
+    Having clause is used with GROUP BY, to filter the records from the groups based on the given condition in the HAVING clause
+
+7. Explain what the ORDER BY and GROUP BY clauses do
+
+    ORDER BY will order records in acending or decending order based on a specified row
+    GROUP BY will group rows that have the same values into summary rows
+
+8. Explain the concept of relational integrity
+
+    Relational integrity refers to the relationship between tables. Because each table in a datbase must have a primary key, this primary key
+        can appear in other tables because of its relationship to data within those tables. When a primary key from one table appears in another table, it 
+        is called a foreign key. 
+
+9. List the integrity constraints
+
+    PRIMARY KEY 
+    FOREIGN KEY
+    NOT NULL 
+    UNIQUE 
+    CHECK
+
+10. Define the word “schema”
+
+    Schema is a logical collection of database objects, like tables, triggers, stored procedures, ...
+
+11. What is a candidate key? What about a surrogate key?
+
+    A candidate key is an attribute or a set of attributes that uniquely defines the tuple within a relation
+
+    A surrogate key is a system generated (could be GUID, sequence, etc.) value with no business meaning that is used to uniquely identify a record. 
+
+12. What conditions lead to orphan records?
+
+    An orphan record is when a child record with a foreign key points to a parent record of a primary key field that no longer exists. 
+
+13. What are some SQL data types?
+
+    varchar
+    text
+    int(size)
+    date 
+    timestamp
+
+14. What is normalization? What are the levels?
+
+    Normalization is the process of organizing the data in the database.
+    Normalization is used to minimize the redundancy from a relation or set of relations.
+    Normalization divides the larger table into the smaller table and links them using relationship
+
+    First normal form (1NF) - if a relation contain composite or multi-valued attribute, it violates first normal form or a relation is in first
+        normal form if it does not contain any composite or multi-valued attribute.
+    
+    Second normal form (2NF) - to be in second normal form, a relation must be in first normal form and relation must not contain any partial dependency. 
+
+    Third normal form (3NF) - A relation is in third normal form, if there is no transitive dependency for non-prime attributes as well as it is in second normal form. 
+
+15. What are the properties a transaction must follow?
+
+    ACID
+    Atomacity - All changes to data are performed as if they are a single operation.
+    Consistancy - data is in a consistant state when a transaction starts and when it ends.
+    Isolation - the intermediate state of a transaction is invisible to other transactions. As a result, transactions that run concurrently appear to be serialize.
+    Durability - after a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure. 
+
+16. Explain the different isolation levels. What read phenomena do each prevent?
+
+    Dirty Read - a dirty read is the situation when a transaction reads a data that has not yet been committed. 
+    Non-Repeatable read - Non-repeatable read occurs when a transaction reads same row twice, and get a different value each time. 
+    Phantom Read - Phantom read occurs when two same queries are executed, but the rows retrieved by the two, are different. 
+
+17. What is the difference between joins and set operators?
+
+    Joins compine data into new columns
+    Unions combine data into new rows
+
+18. What are the types of joins? Explain the differences.
+
+    INNER JOIN - selects all rows from both the tables as long as the condition satisfies
+    FULL JOIN -  result-set will contain all the rows from both tables
+    LEFT JOIN - returns all the rows from the table on the left side of the of the join and matching rows for the table on the right side of the join. 
+    RIGHT JOIN - RIGHT JOIN is similar to LEFT JOIN. it returns all the rows of the table on the right side of the join and matching rows for the table
+        on the left side of join. 
+
+19. Explain the difference between UNION, UNION ALL, and INTERSECT
+
+    UNION - combines the results of two quieries with the UNION operator, which elminiates duplicate selected rows. 
+    UNION ALL - UNION operator returns only distinct rows that appear in either result, while the UNION ALL operator returns all rows. 
+    INTERSECT - returns only those rows returned by both queries
+
+20. What is a cascade delete?
+
+    A foreign key with cascade delete means that if a record in the parent table is deleted, then the corresponding 
+        records in the child table will automatically be deleted. 
+
+21. What is the purpose of a view? What about an index?
+
+    A database view is a subset of a database and is based on a query that runs on one or more database tables. Database views are saved in the database as
+        named queries and can be used to save frequently used, complex queries. 
+
+22. What’s the difference between a clustered and non-clustered index?
+
+    Clustered indexes are indexes whose order of the rows in the data pages corresponds to the order of the rows in the index. 
+        This order is why only one cluster index can exist in any table, whereas, many non-clustered indexes can exist in the table. 
+
+23. What is a trigger? Give the syntax for creating a trigger.
+
+    A trigger is a stored procedure in database which automatically invokes whenever a special event in the database occurs.
+
+24. How would you setup a primary key that automatically increments with every INSERT statement?
+
+    user sequence object in DB to provide the primary key. Make the type of the primary key serial 
+
+25. What is the difference between scalar and aggregate functions? Give examples of each
+
+    Aggregate functions - operate against a collection of values and return a single summarizing value. Example: sum, avg, max, min 
+
+    Scalar functions - return a single value based on scalar input argument. Example: upper, length 
+
+26. What’s the difference between implicit and explicit cursors?
+
+
+
+
+
+
+
+
+HTML/CSS
+
+HTML
+
+1. What is HTML?
+
+    HyperText Markup Language - it is a markup language for creating web pages and applications.
+
+2. What is the HTML5 doctype declaration?
+
+    <!DOCTYPE html>
+
+    The doctype declaration is used to inform the browser about the version of HTML used in the document. It is known as the Document Type Declaration (DTD)
+
+3. List some tags. What is <head> used for? <body>?
+
+    head, body, html, p, img, input, title
+
+    <head> - Is used for declaring meta data, css styles, scripts, and title. 
+
+    <body> - contains everything that the user will actually see on the webpage. 
+
+4. What are the required tags for an HTML document?
+
+    <!DOCTYPE html>, <html>, <head>, <body>
+
+5. What is the tag for ordered list? unordered list? Change bullet styling?
+
+    Ordered List: <ol>
+    Unordered List: <ul>
+    List Item: <li>
+
+6. What features came with HTML5? Are HTML 5 tags different from other tags?
+
+    Introduced a new DOCTYPE declaration <!DOCTYPE html> and the character encoding (charset) declaration <meta charset="UTF-8">
+    HTML 5 also introduced features to allow us to embed audio and video files on the web page and provides the support to run JavaScript in the background. 
+
+    No html 5 tags are not diffent from other tags
+
+7. Do all tags come in a pair? List a self-closing tag.
+
+    No they don't there are self closing tags. 
+
+    <img src=""/>
+
+8. What’s the difference between an element and an attribute? List some global attributes.
+
+    Element - provide the structure of the document. Elements are defined within HTML files using tags.
+
+    Attribute - attributes are defined within an tag. They are key/value paris that give metadata about the tag that are important for the browser to know. 
+
+9. What is the syntax for a comment in HTML?
+
+    <!-- -->
+
+10. What tags would you use to create a table? A navbar? What about a form?
+
+    table - <table>, <thead>, <tbody>, <tfoot>, <th>, <tr>, <td>
+    navbar - <nav>
+    form - <form>
+
+11. What’s the difference between a class and id?
+
+    Class - can be used on multiple elements
+    Id - is unique, should only be used once. 
+
+12. How would you include CSS into an HTML document? What about JS?
+
+    using the style attribute or you can reference an external style sheet in the head tag, and you can decare the styles in the head tag.
+
+    inline: <p style="">
+    internal: <style></style>
+    external: <link rel="stylesheet" href="styles.css">
+
+13. What is a semantic tag? What about formatting tags/elements?
+
+    A semantic tag are those that clearly describe their meaning/function to the user. 
+    Examples: <article>, <details>, <figcaption>, <figure>
+
+14. What’s the difference between a block and an inline element?
+
+    block-leve elements are those that will render on new lines in blocks by default
+    inline-level elements are those that will render on the same line that they are currently on. 
+
+
+
+
+
+
+
+
+CSS
+
+15. What is CSS? what are the different ways of styling an html file?
+
+    Cascading style sheets - it is a language for styling HTML documents by specifying certain rules for layout and display in key/value pairs. 
+
+    Different ways of styling are inline, internal, and external
+
+16. Which way has highest priority when styles cascade: inline, internal, and external stylesheets. Which is best practice? Why?
+
+    Priority:
+        inline
+        internal
+        external
+    
+    Best practice would be external. This is because it wont clutter up our html code and allow us to view all styling in one separate location. 
+
+17. What are the different CSS selectors? Write the syntax for each.
+
+    CSS selectors is an HTML element like h3. It can be the tag, id, or class
+
+18. What is a psuedo-class? What is the syntax for selecting that?
+
+    pseudo-class - is a keyword added to a selector that specifies a special state of the selected element(s)
+
+19. Write a CSS selector for styling all spans inside of a div. What about only targeting spans that are direct descendents of divs?
+
+    all pan in div:
+    div span: ...
+
+    Direct-descendents:
+    div+span: ...
+
+20. Can I select multiple elements at once with CSS? If so, what is the syntax?
+
+    you can set multiple elements to the styling of a class
+
+    <tag class="className"><tag>
+    <different_tag class="className"><different_tag>
+
+21. Explain the concept of specificity and how it relates to styling conflicts
+
+    specificity - means by which browsers decide which CSS property values are most relevant to an element and , therefore, will be applied. (if there is conflicting styles)
+
+22. Explain the CSS box model
+
+    margin
+    border
+    padding
+    content
+
+23. What features did CSS3 introduce?
+
+    CSS3 separates CSS into convenient modules. CSS3 allows developers to style HTML elements easier. They are less dependent on image files and can complete CSS
+        styling with fewer lines of code. 
+
+    Some new Features include: 
+        box shadow
+        opacity
+        rounded corners
+        attribute selectors
+        new colors
+        more than web-safe fonts
+
+24. What is Bootstrap? What are some bootstrap classes you can use?
+
+    Bootstrap  - is a CSS framework for developing responsive and mobil-first websites. 
+
+    some classes: container, container-fluid, row, col
+
+25. How many columns make up the Bootstrap grid system?
+
+    12 columns make up the bootstrap grid system
+
+26. What is a CDN? what are the benefits? When would you choose to use a CDN vs downloading and using the Bootstrap source code in your project?
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+JavaScript
+
+Language Fundamentals
+
+1. What is JavaScript? What do we use it for?
+
+    JavaScript - is the most commonly used client-side scripting language. It is a high-level, multi-paradign, interpreted programming language used to create dynamic webpages.
+        When a browser loads a page, the browser interprets javascript code in it and executes it. 
+
+2. Can we run JavaScript in a web browser, on a server, or both?
+
+    JavaScript can run on both
+
+3. What programming paradigm(s) does JS support?
+
+    procedural, Object-Oriented, and functional programming
+
+4. What are the data types in JS?
+
+    string, number, boolean, null, undefined, object, Symbol
+
+    (Symbol is a new data type introduced in ES6 but is not commonly used. )
+
+a. What is the type of NaN? What is the isNaN function?
+
+    NaN property is a value representing Not-A-Number
+
+    isNaN will return true if the provided parameter is not a number and false if it is.
+
+b. What is the data type of a function?
+
+    A function is declared using the function keyword. When using typeof to get the data type it will just return function. 
+
+c. What about an array?
+
+    An array is an Object data type
+
+d. What is the difference between undefined and null?
+
+    Null means that the value is just empty where as undefined means that no value has been set.
+
+5. What are JS objects? what is the syntax?
+
+    JS objects is a set of key/value pairs
+
+6. What is JSON? Is it different from JS objects?
+
+    JSON (JavaScript Object Notation) - is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. 
+
+    The most notable difference is that JSON keys must have double quotes around it. 
+    JSON is basically a text fomrat that makes it easy to share data between devices such as clients and servers. 
+    JS Objects are actually object representations where each key is a in an object is a javascript variable. 
+
+7. What are some ways you can use functions in JS?
+
+    Functions can be called anywhere in the the program. 
+
+    They can be used to perform arithmetic operations on variables
+
+8. What are the different scopes of variables in JS?
+
+    Variable Scope - defines the lifetime and visibility of a variable. Each variable associated with a scope. The variable can be accessed only within its scope. 
+
+        Global Scope - variables defined outside any function, block, or module have a global scope. They can be accessed anywhere in the application.
+        Local Scope - used to refer to function-local scope, but following the introduction of block scope, this term is considered ambiguous and shoue not be used. 
+        Function Scope - variable declaration in a function is only visible inside that function. Var is they keyword to define variable for a function scope accessiblity
+        Block Scope - is the scope of the variables declared inside the {}. const and let keywords allow developers to declare variables in the block scope, which means
+            the variables exist only within the corresponding block
+        Lexical Scope - is that the variable defined outside a function can access the inside another fucntion defined after the variable declaration. 
+
+a. What are the different ways to declare global variables?
+
+    Global variables are declared with var and are declared outside of a function. 
+
+b. Is it a best practice to use global variables? Why or why not?
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+9. What is variable hoisting?
+
+    Hoisting - variable declarations made with var and function declarations made with the fucntion keyword ar hoisted  - or moved - to the top of the scope in
+        which they are declared when the javascript interpreter parses the code. This means that variables and functions can be used before they are even declared as show below
+
+10. What is the global object in client-side JavaScript?
+
+    A global object in javascirpt is an always defined object that provides variables and fucntion, nad is available anywhere. In a web browser, the global object is the window
+        object.
+
+a. What are some built-in functions (methods on the global object)?
+
+    eval(), unevel(), isFinite(), isNaN(), parseFloat(), parseInt(), encodeURI(), etc.
+
+b. How would you set some code to run at a specified time in the future? What about repeatedly?
+
+    You can use setTimeout to have a specific function execute at a given time. 
+
+11. Explain how the guard and default operators work
+
+    Guards are put into place using the logical operators &&, ||, ! 
+
+12. What are callback functions? What about self-invoking functions?
+
+    Callback functions are functions that are passed into another function that will be called later with in that function.
+
+    Self-invoking fucntions are recursive functions - they call themselves.  
+
+13. What is closure and when should you use it?
+
+    Closure - is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, 
+        a closure gives you access to antoher function's scope from an inner function. 
+
+    Closures are created everytime a function is created, at function creation time. 
+
+14. Use the object literal syntax to create an object with some properties
+
+    var obj = {
+        name: "alec",
+        id: 1
+    }
+
+15. What is a truthy or falsy value? List the falsy values.
+
+    Truthy is any value that would evaluate to true and falsey values are any value that will evaluate to false. 
+
+    falsey values: null, NaN, undefined, 0, -0, 0N, false
+
+16. What is the difference between == and ===? Which one allows for type coercion?
+
+    == compares the two variables but ignores data types
+    === compares the two variables but does not ignore data types (type coercion)
+
+17. Explain the template literal syntax
+
+    Template Literals use the ``. It provides an easy way to create multiline strings and perform string interpolation. 
+
+    For the multiline strings it counts an enter in the code as an actual \n in the string. 
+
+18. What is a Promise?
+
+    Promises are used to handle asynchronous operation in javascript
+
+    Ex.
+        let promise = new Promise(function(resolve, reject) {
+            // content here
+        })
+
+        Consuming fucntions can be registerd using methods .then, .catch, and .finally
+
+19. What are arrays in JS? can you change their size?
+
+    An array is a variable that allows the programmer to store more than one value. Arrays in javascript are objects and thus consist of key/value pairs and inherit from the Array prototype
+
+    Yes their sizes can be changed using the push and pop functions. 
+
+20. List some array methods and explain how they work
+
+    splice(), shift(), push(), pop(), forEach()
+
+21. Explain what “strict mode” does
+
+    JavaScript is a loosely typed scripting language. JavaScript allows strictness of code by using "use strict"; statement at the top of JavaScript code or in a function. 
+
+    When using strict mode JS does not allow us to use undefined variables, reserved keywords as variable or function name, duplicate properties of an object, duplicate parameters of the function,
+        assign values to read-only properties, Modifying arguments object, and deleting an undeletable property. 
+
+22. Explain how inheritance works in JS
+
+    Prototypical inheritance
+    Object prototypes (__proto__) - All javascript objects have a prototype. Browsers implment prototypes through the __proto__ property
+
+    inheritance in javascript is implemented through the prototype chain. Every normally created object, array, and function has a prototype chain of __proto__
+        properties ending with Object.prototype at the top
+
+23. What does the "this" keyword refer to?
+
+    The this keyword is a reference variable that refers to the current object. 
+
+    this alone: refers to a global object
+    this in function: refers to the gobal object [object window]
+    this in strict mode: to a variable: global object [object window], to a function it is undefined
+    this in event handlers: refers to the HTML element that recieved the event
+    this in Object method Binding: refers to the object.
+
+24. Explain the concept of lexical scope
+
+    Lexical scope is that a variable defined outside a function can access the inside another function defined after the variable declaration. 
+
+25. What are some methods on the function prototype?
+
+    valueOf
+    propertyIsEnumerable
+    toLocalString
+    toString
+    isPrototypeOf
+    hasOwnProperty
+
+26. What will happen when I try to run this code: console.log(0.1+0.2==0.3) ? ES6+
+
+    it will return back as false. 
+
+27. What new features did ES6 introduce?
+
+    better syntax for features that already exist: classes, modules
+    
+    new functionality in the standard library: new methods for strings and arrays, promises, maps, Sets
+
+    completely new features: generators, proxies, WeakMaps
+
+28. What is the difference between var, let, and const keywords?
+
+    var is function scope where as let and const are block scoped
+
+    meaning any var defined is scoped to the nearest function it is contained within. 
+    any let and const are scoped to the nearest block scope they are contained within. 
+
+29. Give the syntax for template literals / string interpolation
+
+    console.log(`this is an example
+                of using template literals
+                and string interpolation);
+
+30. What’s the difference between a normal function declaration and an arrow function?
+
+    an arrow function provides a concise way to write functions in javaScript. They save developers time and simplify function scope. 
+
+    let func = (args) => expression;
+
+31. Does JS have classes? If so, when were they introduced?
+
+    no they do not. In the class-based OOP sense of the word. JavaScript works with objects. 
+
+32. What is object and array destructuring? What is the rest/spread operator?
+
+    object/array destructuring - is javascript expression that makes it possible to unpack values form arrays, or properties from objects, into distinct variables. 
+
+    rest/spread operator is exactly the same as varargs ...
+
+33. How would you set default values for parameters to a function?
+
+    Set the parameter using the = sign in the function definition. 
+
+34. What is the difference between for-of and for-in loops?
+
+    for in loops over enumerable property names of an object.
+    for of does use an object specific iterator and loops over the values generated by that. 
+
+35. What’s the benefit of computed property names?
+
+    allows you to have an expression (a piece of code that results in a single value like a variable or function invocation) be computed as a property name on object. 
+
+36. Explain the async/await keywords. Why is it preferred to use this instead of .then() methods?
+
+    async - an async function is a function that operates asynchronously via the even loop, returns a promise object implicityly. Async ensures that the function returns a promise. 
+
+    await - The await keyword is only valid inside ansync functions. await makes javascript wait until that promis esettles and returns its result. 
+
+    Since it returns a promise a promise can use the .then() methods (maybe it already does it for us?)
+
+37. What is a generator function? What’s the point of the yield keyword?
+
+    generator functions are functions that can be exited and later re-entered. 
+
+    the body of a generator function will not execute its body immediately; an iterator object for the function is returned instead. When the iterator's next() method is called, the 
+        generator fucntion's body is executed
+
+38. What built-in data structures does JavaScript provide?
+
+    Array
+    Set
+    Map
+
+Events and DOM
+
+39. What is the DOM? How is it represented as a data structure? What object in a browser environment allows us to interact with the DOM?
+
+    Document Object Model (DOM) - is a programming API  for HTML and XML documents. It enables javascript to access and manipulate the elements and styles of a websites
+
+    It is represented as a tree line structure known as the DOM structure or DOM tree. 
+
+    the document object allows us to interact with it.
+
+40. List some ways of querying the DOM for elements
+
+    getElementById()
+    getElementByClassName()
+    getElementByTagName()
+
+41. How would you insert a new element into the DOM?
+
+    createElement()
+
+    Ex.
+        var elmt = document.createElement('div');
+        elmt.innerHTML = '<p>Hello World<p>';
+
+    you can also replace a child, append a node, inserter a node before another, insert a node after another.     
+
+42. What are event listeners? What are some events we can listen for? What are some different ways of setting event listeners?
+
+    Events -  occur when user interaction takes place on a web page, such as when the end-user clicked a link or button, pressed a key on the keyboard, moved the modules
+        pointer, submits a form, etc. 
+
+    Event listener is a function in javascript that waits for an even to occur. The addEventListener() function is an inbuild function in JavaScript used to handle the event.
+        Ex.
+            var x = document.getElementById("myBtn");
+            x.addEventListener("mouseover", myFunction);
+            x.addEventListener("mouseout", mySecondFunction);
+
+            function myFunction() {}
+            function mySecondFunction() {}
+
+    Events we can listen for:
+        onclick - this is a lcik event occurs when a user clicks the element on a web page. 
+        ondbclick - this is a click event occurs when a user double clicks the element on the web page. 
+        onload - this is a load event occurs when the browser has finished loading the page. 
+        onunload - this is a load even occurs when a user closes the document. 
+        onresize - this is a load even occurs when the broswer window is minimized or maximized.
+        onmouseover - this is a mouse even occurs when the user moves the mouse over an HTML element 
+        onmouseout - this is a mouse event occurs when the user moves the mouse away from an html element. 
+        onkeydown - this is a keyboard even occurs when the user presses down a key on the keyboard. 
+        onkeyup - this is a keyboard event occurs when the user releases a key on the keyboard
+        onfocus - this is a form-input event occurs when the user gives focus to an element on a webpage. 
+        onblur - this is a form-input event the occurs when the user takes the focus away from a form element or a window
+        onchange - this is a form-input event that occurs when a user changes the value of a form element
+        onsubmit - submits a form in a webpage
+
+43. What is bubbling and capturing and what is the difference?
+
+    In Event Bubbling, the event propagates from the target elements to its parents, then all its ancestors that are on the way to the top. Bubbling follows the 
+        Bottom to Top approach
+
+    In Event captureing, the event propagates from the top element to the target element. Capturing follows the Top to Bottom approach. 
+
+44. What are some methods on the event object and what do they do?
+
+    bubbles - returns whether or not a specific event is a bubbling event
+    cancelBubble - sets or returns whether the event should propagate up the hierarchy or not 
+    cancelable - returns whther or not an even can have its default action prevented 
+    composed - returns whether the event is composed or not
+    createEvent()
+    composedPath()
+    currentTarget
+    defaultPrevented
+    isTrusted
+    etc.
+
+45. How would you submit a form using JS?
+
+    <form action="/signup" method="post" id="signup"></form>
+
+    const form = document.getElementById('signup');
+
+    form.addEventListener('submit', (event) => {
+        // handle the form data
+    })
+
+    form.sumbit();
+
+AJAX
+
+46. What is AJAX? why do we use it?
+a. What are the benefits of using AJAX?
+b. Are there any downsides of using AJAX?
+47. Explain why it is important that AJAX is asynchronous
+48. List the steps to sending an AJAX request
+49. What are steps to sending an AJAX request?
+50. List the different ready states of the XmlHttpRequest object
+51. How does the fetch API differ from the XHR object?
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+Servlets
+1. What is a servlet? What about a servlet container? Which servlet container have you worked with?
+
+    A Servlet is a java class that takes incoming requests, processes them, and generates a response to send back to the user. 
+
+    Servlet Container - is a server program which provides everything else; the opening of the socket, the transformation framework to turn HTTP into java API calls,
+        and a number of interfaces which allow you to plug in your servlet code. 
+
+2. Describe the servlet class inheritance hierarchy. What methods are declared in each class or interface?
+
+    Servlet     ServletConfig    Serializable
+
+                GenericServlet
+
+                HttpServlet
+
+                UserDefinedServlet
+
+    Methods:
+        doGet
+        doPost
+        doHead
+        doTrace
+        doDelete
+        etc
+
+3. How would you create your own servlet?
+
+    Extend your user defined class by HttpServlet
+
+4. What is the deployment descriptor? What file configures your servlet container?
+
+    file: web.xml
+
+    A web Application's deployment descriptor describes the classes, resources and configuration of the application and how the web server uses them to serve web requests
+
+5. Explain the lifecycle of a servlet - what methods are called and when are they called?
+
+    there are three life cycle methods of a servlet: init(), service(), destroy()
+
+    Step-1: loading of the servlet
+    Step-2: creating an instance of servlet 
+    Step-3: Invoke init() method once
+    Step-4: Invoke service() method repeatedly for each client request
+    Step-5: Invoke destroy() method once
+
+6. Is eager or lazy loading of servlets the default? How would you change this?
+
+    lazy loading
+
+7. What are some tags you would find in the web.xml file?
+
+    <web-app>, <servlet>, <servlet-mapping>
+
+8. What is the difference between the ServletConfig and ServletContext objects? How do you retrieve these in your servlet?
+
+    ServletConfig is an object created by the servlet container, used to pass initial parameters or configuration information to a particular servlet during initialization
+        uses <init-param> in the web.xml
+
+    ServletContext is the object created by the Servlet Container to share initial parameters or configureation information to all servlets and other components.
+        uses <context-param> in web.xml
+
+    The <param-name> and <param-value> used to declare the parameter name and its value. 
+
+9. What is the purpose of the RequestDispatcher?
+
+    The Request Dispatcher interface defines an object that passes along the client's request to any other resources (servlet, JSP file, or HTML file) on the
+
+10. Explain the difference between RequestDispatcher.forward() and HttpServletResponse.sendRedirect()
+
+    RequestDispatcher.forward() - is used to pass the request to another resource for further processing within the same server. 
+
+    HttpServeletResponse.sendRedirect() - is used to redirect the client requests to some other location for further processing, the new location is available on different 
+        servers or different contexts. 
+
+11. What are some different ways of tracking a session with servlets?
+
+    Cookies
+    Hidden Form fields
+    URL rewriting
+    the HTTPSession object
+
+12. What is object mapping? Any Java libraries for this?
+
+    Object mapping is the process of mapping an object model class to a corresponding table in the database. 
+
+    javax.persistance is used for mapping these.
+
+13. How would you send text or objects back in the body of the HTTP response from a servlet?
+
+    You set the response.setContentType() to the content you plan to return and then establish a PrintWriter with response.getWriter() this will sent the response. 
+
+14. What is the difference between getParameter() and getAttribute() methods?
+
+    getParameters will get the parameters from the HTTPRequest that was sent from the client. 
+
+    setAttribute is for server-side usage only - you fill the request with attributes that you  can use within the same request. 
+
+15. Explain the front controller design pattern
+
+    The front controller design pattern provides a single handler for all the incoming requests for a resource in an application, and then dispatches the requests
+        to the appropriate secondary handler for that type of request. The front controller may use other helper APIs to achieve the dispatching mechanism
+
+    Front Controller - the front controller is a single entry point for all requests, and routes incoming user requests. It delegates to the dispatcher to
+        perform action and view management. 
+
+    Dispatcher - A dispatcher is responsible for the action and view managerment, including locating and routing to the specific actions that will service a request,
+        and finding the appropriate view. 
+
+    Helper - We use Helper classes to break out specific features and make the application easier to build and maintain. They can be used for retrieval of content,
+        validation of user - entered information, processing of business login, and data processing. 
+
+    View - A view represents and displays information to the client - think an HTML/CSS/JS page. The view retrieves information from model objects. These model objects
+        can be passed to the view from a front controller servlet through a request attribute, or by placement in the web application's session data. 
+
+
+
+
+
+
+
+
+Angular
+
+1. What makes a “single page application” (SPA) different from a normal web page?
+
+    Single Page Applicaiton - is a web application that fits on a single page in the browser. All our JavaScript, HTML, CSS code retrieved by the browser with a single
+    load. Navigation between pages performed without refreshing the whole page. SPA uses AJAX and HTML5 to build responsive web applications. 
+
+    Advantages of SPAs:
+        fast and responsive
+        caching capabilities
+        pleasant user experience
+
+    Disadvantages of SPAs:
+        doesn't perform well with SEO (search engine optimization)
+        security
+        while overall performance is better, more data is frontloaded which can make the first page load a little slower
+
+2. Explain the difference between server-side and client-side rendering
+
+    Server-side rendering - is when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user's machines   
+        over the internet. 
+
+    Client-side rendering - it's about rendering content in the browser using javascript. So instead of getting all the content form the HTML document itself, a bare-bones
+        HTML document with a javascript file in initial loading itself is recieved, which renders the rest of the site using the browser. 
+
+3. What are some features of the Angular framework?
+
+    Uses component based UI to build the applications. 
+    Angular is compatible with the most recent versions of typescript that have powerful type checking and object-oriented features. 
+    Angular focuses on "()" for event binding and "[]" for property binding
+    angular support mobiles. 
+
+4. How does TypeScript relate to JavaScript? What are the major benefits of using it over JavaScript?
+
+    TypeScript is a typed superset of JavaScript. 
+    It is an open-source and object-oriented programming language that supports classes, interfaces, inheritance, modules, etc., develped by microsoft. 
+    It can be used to manipulate the DOM for adding or removing elements, similar to javascript.
+    It is portable across browsers, devices, and operating systems. 
+    It supports strong typing or static typing, unlike javascript
+    TypeScript files are saved with a .ts extension and then compiled into JavaScript using the TypeScript compiler
+    TypeScript gets compiled to JavaScript, which can run on any JavaScript runtime environment
+
+5. List the data types of TypeScript
+
+    number - store decimal, hexadecimal, binary and octal literals in a variable. 
+    string - represents text characters enclosed withing double quotes or single quotes.
+    boolean - true or false
+    undefined and null - null is being empty and undifined means it wasn't initialized. 
+    any - used to describe a type of a variable that we do not know when we are writing an application. 
+    void - is used as the return type of functions that do not return a value. 
+    Array - typical array. use either [] or Array<type>
+    Tuple - which is an array with a fixed number of selements whose types are known. 
+    enum - that allows us to declare a set of named constants. 
+    never - represends a type of values that never occur.
+
+6. How would you create a new Angular project?
+
+    ng new project-name
+
+7. What is a component? How would you create one? List some other commands using the Angular CLI
+
+    Components are the basic building blocks in the angular applciation. Components contain the data & UI logic that defines the view and behavior of the web application.
+    They contain .css, .html, .ts, and .spec.ts
+
+    In .ts the component is as follows:
+        import { Component } from '@angular/core';
+        @Component ({
+            selector: 'app-root',
+            templateUrl: './app.component.html' ,
+            styleUrls: ['./app.component.css]
+        })
+        export class AppComponent {}
+
+    You can create one using the "ng g c component-name" command
+
+8. What files make up a component? What is the “spec” file used for?
+
+    .css, .ts, .html, .spec.ts
+
+    .spec.ts is used for unit testing in angular. 
+
+9. Explain the relevance of npm to Angular projects. Which file does npm use to track dependencies?
+
+    npm is needed in order to run angualr projects because npm is what compiles the typescript code and allows you to run it. 
+
+    npm uses package.json to track dependencies. This file is used to give information to npm that allows it to identify the project as well as handle the project's
+        dependencies. This file contains metadata relevant to the project, such as project description, the version of the project, license information, etc. 
+
+    npm generates the package.json file when you run "npm init" command in the termianl. 
+
+10. List some decorators for Angular apps
+
+    Component decorator
+    NgModule decorator
+
+11. What is the lifecycle of a component? List some lifecycle hooks
+
+    Angular creates a component; renders it; creates and renders its children; checks it when it's data-bound properties change; and destroys it before removing it from the DOM
+
+    There are 8 hooks that execute in the following order:
+        constructor
+        ngOnChanges
+        ngOnInit
+        ngDoCheck
+            ngAfterContentInit
+            ngAfterContentChecked
+            ngAfterViewInit
+            ngAfterViewChecked
+        ngOnDestroy
+
+12. What is a directive and what are the different types? How to tell these directives apart with syntax?
+
+    directive change the appearchance or behavior of DOM elements and angular components with attribute directives. 
+
+    You can tell them apart based on the selector given to the directive
+
+13. What is the benefit of using a directive like NgClass over the class attribute, or even property binding to the class attribute?
+
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. What is a pipe? A service?
+
+    Pipes provide a way to transform value in an angular template. Pipes are used with a pipe (|) character, and take integer, strings, arrays, and date as input
+        and returns a desired formatted output which can be displayed in the browser.
+
+    Ex.
+        Las logged in @ {{ lastLoggedInTime | date }}
+
+15. How would you create a custom pipe? What about a service?
+
+    We can create custom pipes using the ng g pipe <pipe-name> command in the terminal wit the angular cli
+
+16. How does dependency injection work in Angular?
+
+    DI as a design pattern - consider, we have three classes Engine, tires, and car. let's assume, we need an Engine instance and a tires instance to create a car instance.
+
+    Dependency injection allows the class to recieve its dependencies from external sources rather than creating them itself. 
+
+17. What is an Angular module? What properties should you set inside it?
+
+    NgModules are containers for a cohesive block of code dedicated to an application domain, a workflow, or a closely releated set of capabilities. They can contain
+        components, service providers, and other code files whose scope is defined by the containing NgModule. 
+
+18. What’s the difference between a JavaScript module and Angular module? What are some common Angular modules?
+
+    A JavaScript module is an individual file with JavaScript code, usually containing a class or a library of functions for specific purpose within your application
+
+    Ex:
+        BrowserModule
+        FormsModule
+
+19. How would you lazy load a module?
+
+    To lazy load Angular modules, use loadChildren (instead of component) in your AppRoutingModule routes configuration as follows. 
+
+20. How have you used the HttpClient? What methods does it have and what do they return?
+
+    Yes I have used it. http.get, http.post they return observables
+
+21. What is an Observable? What’s the difference between it and a Promise?
+
+    Observables provide support for passing messages between parts of your application. We can use observables for event handling, asynchronous programming, and handling
+        multiple values. 
+
+    A promise handles a single event when an async operation completes or fails
+
+    An Observable is like a stream (in many languages) and allows to pass zero or more events where the callback is called for each event. 
+
+22. What forms of data binding does Angular support? Explain the syntax for each
+
+    1-way data binding, 2-way data binding
+
+    1-way data binding - One-way data binding allows us to manipulate the views through the models. If we make an changes in the class, it gets reflected in the template. 
+        String interpolation {{}}
+        property binding []
+        event binding ()
+
+    2-way data binding - Two-way data binding, any changes in the tamplate are not reflected in the component class. 2-way data binding is achieved by combining 
+        property binding and event binding together. 
+        [()] syntax
+
+23. What does Webpack do for your ng project?
+
+    Webpack is an open source java script module bundler. Its main purpose is to bundle java script files for usage in a browser, yet it is also capable of
+        transforming, bundling, or packaging just about any resource or asset. 
+
+24. How would you implement routing in your project?
+
+    Create an app-routing module. Declare a routes array of type Routes. From there you can declare the paths taken by your webpage. 
+
+    const routes:Routes = [
+        {path: 'pathName', component: PathComponent},
+        ...
+    ]
+
+    @NgModule({
+        imports: [RouterModule.forRoot(routes)],
+        exports: [RouterModule]
+    })
+
+    in app.module.ts
+    imports: [
+        RouterModule.forRoot(routes)
+    ]
+
+25. What is an EventEmitter and when would you use one?
+
+    An EventEmitter is used to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance. 
+
+    Angular uses @Input and @Output decorators to flow data between components. We can also use angular services to flow data between the components. 
+
+26. What’s the difference between using reactive and template-driven forms? How would you setup each?
+
+    Template-driven forms make use of the FormsModule while reactive forms are based on ReactiveFormsModule.
+
+    Template driven forms are asynchronous in nature, whereas Reactive forms are mostly synchronous. 
+    
+    In a template-driven approach, most of the logic is driven from the tamplate, whereas in reactive-driven approach, the lgoi resides mainly in the component or 
+        typescript code. 
+
+27. How would you run your unit tests for an Angular project?
+
+    Unit tests are done with the spec.ts file. You can use the "ng test" command to run your unit test in your angular project. 
+
+
+
+
+
+
+
+
+DevOps + Linux + AWS
+
+DevOps
+
+1. What is DevOps? What is the goal of various DevOps processes?
+
+    Seoftware Development (dev) Operations (ops) are a set of practices and methodologies designed to combine the development (production/writing of code), deployment
+        and maintanence of code into a streamlined process. The primary goal of DevOps is to expedite the lifecycle of application development, particularly through
+        the automation of tasks. 
+
+2. Explain CI/CD. What is the difference between Continuous Deployment and Continuous Delivery?
+
+    Continuous delivery - is a paradigm in which the building, management and testing produced software is automated such that deployments can be performed at the push
+        of a button. Continuous deleivery is the process of automating all steps of a development pipeline except fot the final deployment step.
+
+    Continuous deployment - is a process of releasing software in which changes are tested for stability and correctness automatically. This results in immediate, 
+        autonomous deployment of code to production environments. Continuous delievery is a precursor to continuous deployment. 
+
+3. What tools have you used to achieve CI/CD? Explain how you’ve setup and used them
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. What is a DevOps pipeline? Explain the steps to setting one up
+
+    A DevOps pipeline is a set of automated processes and tools that allows both developers and operations professionals to work cohesively to build and eploy code to
+        a production environment. 
+
+
+    Steps: 
+        continuous development
+        continuous integration
+        continuous testing
+        continuous monitoring
+        continuous feedback
+        continuous deployment
+        continuous operations
+
+5. What is SonarQube / SonarCloud? Explain some of the features of it
+
+    SonarQube - is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of
+        code to detect bugs, code smalls, and security vulnerabilities on 20+ programming languages. 
+    
+    SonarCloud - 
+
+6. What is a “build”? What is the end result of a build? What is the build tool you’ve used for Java projects?
+
+    Maven is a build automation tool that we have utilized. 
+
+    Build means to convert source code files into standalone software artifacts. 
+
+7. What are the Maven lifecycles? List the steps in the build lifecycle
+
+    Validate - project is correct and all necessary information is available
+    compile - compiles project source code
+    test - tests all compiled code
+    package - packages all compiled code to WAR/JAR file
+    integration - performs all integration tests on WAR/JAR
+    Verify - runs checks on the results of integration tests
+    install - installs WAR/JAR to local repository
+    deploy - copies final WAR/JAR to the remote repository. 
+
+
+
+
+
+
+
+
+
+
+
+Linux
+8. What is Unix? Linux? How are Linux OS’s different from other OS’s?
+9. List some Linux distributions
+10. Explain the terms terminal, shell, console, command-line?
+11. What is the bash shell? How would you write a bash script?
+12. What is the shebang syntax and purpose?
+13. What is an environment variable and how would you set one?
+14. What is the difference between relative and absolute paths?
+15. Where are the root and home directories located? How to get to each?
+16. What Linux command would you use to:
+a. Search for text in a text file
+b. Navigate your file hierarchy on the command line?
+c. List files? What about hidden files? See permissions for the files?
+d. Change the permissions of a file
+e. Edit a file from the terminal
+17. How do file permissions work on a Linux system?
+18. What is a package manager? What are some common Linux package managers?
+19. What does “I/O redirection” mean?
+20. Explain the following bash commands:
+a. cat actors.txt | grep Tom Cruise
+b. echo hello world > myfile.txt
+21. You run a command but get an error message saying you don’t have enough
+permissions. What could you try to resolve this?
+22. You spin up a web server that listens for web traffic on port 80, but you forget the name
+of the process. How would you look this up and then terminate the process on a Linux
+command line?
+
+
+
+
+
+
+
+
+AWS
+
+23. How would you describe AWS? What is “the cloud” or “cloud computing” and why is it so popular now?
+24. Define Infrastructure, Platform, and Software as a Service
+25. What’s the difference between a Region and an Availability Zone (AZ)?
+26. How are you charged for using AWS services?
+27. Explain the following AWS services:
+a. EC2
+b. EBS
+c. RDS
+d. Route 53
+e. VPN
+f. S3 / Glacier
+g. Lambda
+h. AMI
+i. IAM
+j. ELB
+28. What steps would you take to create an EC2 and connect to it via your shell?
+29. What configuration options are available for an EC2?
+30. What are Security Groups? When defining a rule for a security group, what 3 things do
+you need to specify?
+31. What’s the difference between scalability, elasticity, and resiliency? What is autoscaling?
+
+
+
+
+
+
+
+
+
+
+Hibernate
+1. What is Hibernate? What is JPA?
+
+    JPA - Java Persistance API is a standard API for accessing, persisting and managing data between java objects/classes and a relational database. 
+        (defined in the javax.persistence package)
+
+    Hibernate - is an object-relational mapping tool for java programming language. It is an open-source persisten framework introduced by gavin king in 2001. 
+
+2. What is the benefit of using Hibernate over JDBC?
+
+    Hibernate's transparent persistence ensures the automatic connection between the application objects with the database tables. it reduces the lines of connection code.
+
+    Hibernate is database independent. it can be used to connect with any database like Oracle, MySQL, sybase, etc. 
+
+    Hibernate framework provides an abstraction - many common tasks are implemented for us internally, like establishing a connection with the database, writing a query
+        to perform CRUD operations, etc. 
+
+    Hibernate supports dual-level caching mechanism. Through the caching concept, hibernate retains the objects in the cache to reduce repeated hits to the database.
+        This feature makes hibernate highly scalable and optimizes the application's performance. 
+
+3. Tell me about some of the JPA annotations you have worked with? What do they do? How do you specify multiplicity relationships with JPA annotations?
+
+    @Entity, @Table, @Column, @OneToOne, etc.
+
+    multiplicity relationships with JPA:
+        @OneToOne
+            primary key file: @OneToOne(mappedBy="name_of_var_in_other_model")
+            foreign key file: @OneToOne
+                              @JoinColumn(name="column_name")
+        @OneToMany
+            pk: @OneToMany (mappedBy="name_of_var_in_other_model", cascade=CascadeType.ALL)
+            fk: @ManyToOne
+                @JoinColumn(name="column_name", nullable=false)
+        @ManyToOne
+            One model:   @ManyToMany(mappedBy="name_of_var_in_other_model")
+            Other model: @ManyToMany
+                         @JoinTable(name="other_table_name", joinColumns={@JoinColumn(name="primary key this file.")}, inverseJoinColumns = { @JoinColumn(name="other table primary key")})
+        @ManyToMany
+
+
+4. What are the interfaces of Hibernate?
+
+    Configuration
+    SessionFactory
+    Session
+    Transaction
+    Query
+    Criteria
+
+5. Tell me how you set up hibernate? What files are you editing, what goes in them, etc.
+
+    You need to set up a hibernate.cfg.xml file or hibernate.properties file. 
+
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+    <hibernate-configuration>
+        <session-factory>
+            <!-- SQL Dialect -->
+            <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+            
+            <!-- Database Connection Settings -->
+            <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+            <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test_db?useSSL=false</property>
+            <property name="hibernate.connection.username">root</property>
+            <property name="hibernate.connection.password">root</property>
+
+            <!-- show all generate SQL query -->
+            <property name="show_sql">true</property>
+
+            <!-- Mention here all the model classes along with their package name --> 
+            <mapping class="com.revature.hibernate.Student"/>
+        </session-factory> 
+    </hibernate-configuration>
+
+
+6. What ways are available to you to map an object to database entities in Hibernate?
+7. In the session interface, what is the difference between save and persist methods? get
+and load methods? Update vs merge methods?
+8. What are the different session methods?
+9. What is the difference between Eager and Lazy fetching and how to setup either?
+10. Under what circumstances would your program throw a LazyInitializationException?
+11. What are the 4 ways to make a query using Hibernate?
+12. What is HQL? What makes it different from SQL?
+13. What is the Criteria API? Can you perform all DDL and DML commands with it? How do
+Restrictions and Projections work within this API?
+14. What is caching? What is the difference between L1 and L2 cache?
+15. How do you enable second level caching?
+16. Tell me about NamedQueries.
+17. Can you write native SQL with Hibernate? Is this a good idea?
+18. What are the configuration options for Hibernate?
+a. How to specify the SQL dialect?
+b. What data must be specified for the SessionFactory?
+c. What is hbm2ddl?
+d. How would you configure Hibernate to print to the console all SQL statements
+run?
+19. What are the different object states in Hibernate? What methods move objects to
+different states?
+20. What is a proxy? When does the proxy resolve to the real object?
+21. What is the difference between Dynamic Insert and Dynamic Update?
+22. What is automatic dirty checking?
+23. What is Transactional Write Behind?
+24. Explain how transaction propagation works
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Spring
+Spring Core
+1. What are Spring Projects and Spring Modules?
+2. What is IOC and what does the IOC Container do?
+3. What is dependency injection and what are some of the benefits of using dependency
+injection?
+4. What types of dependency injection does Spring support?
+5. What are some differences between BeanFactory and ApplicationContext? Which one
+eagerly instantiates your beans?
+6. What is the Spring Bean lifecycle?
+7. What is bean wiring? What about autowiring?
+8. What are the different ways that Spring can wire beans?
+9. What are the scopes of Spring beans? Which is default?
+10. What is the concept of component scanning and how would you set it up?
+11. What are the benefits and limitations of Java configuration?
+12. What does the @Configuration and @Bean annotations do?
+13. What is @Value used for?
+14. What is Spring Expression Language? What can you reference using SpEL? What is the
+difference between $ and # in @value expressions?
+
+
+
+
+
+
+
+
+
+Spring MVC
+15. Explain the MVC architecture and how HTTP requests are processed in the architecture
+16. What is the role of the DispatcherServlet? What about the ViewResolver?
+17. List some stereotype annotations. What are the differences between these?
+18. How would you declare which HTTP requests you’d like a controller to process?
+19. What is the difference between @RequestMapping and @GetMapping?
+20. How to declare the data format your controller expects from requests or will create in
+responses?
+21. What annotation would you use to bypass the ViewResolver?
+22. How would you extract query and path parameters from a request URL in your
+controller?
+23. What concerns is the controller layer supposed to handle vs the service layer?
+24. How would you specify HTTP status codes to return from your controller?
+25. How do you handle exceptions thrown in your code from your controller? What happens
+if you don’t set up any exception handling?
+26. How would you consume an external web service using Spring?
+27. What are the advantages of using RestTemplate?
+
+
+
+
+
+
+
+
+
+Spring AOP
+28. What is “aspect-oriented programming”? Define an aspect.
+29. Give an example of a cross-cutting concern you could use AOP to address
+30. Define the following:
+a. Join point
+b. Pointcut
+c. Advice
+31. What are the different types of advice? What is special about the @Around advice? How
+is the ProceedingJoinPoint used?
+32. Explain the pointcut expression syntax
+33. What visibility must Spring bean methods have to be proxied using Spring AOP?
+Spring Data
+34. What is Spring ORM and Spring Data?
+35. What is the Template design pattern and what is the JDBC template?
+36. What does @Transactional do? What is the PlatformTransactionManager?
+37. What is a PersistenceContext?
+38. Explain how to integrate Spring and Hibernate using ContextualSession
+39. What interfaces are available in Spring Data JPA?
+40. What is the difference between JPARepository and CrudRepository?
+41. What is the naming conventions for methods in Spring Data repositories?
+42. How are Spring repositories implemented by Spring at runtime?
+43. What is @Query used for?
+
+
+
+
+
+
+
+
+
+
+
+
+Spring Boot
+44. How is Spring Boot different from legacy Spring applications? What does it mean that it
+is “opinionated”?
+45. What does “convention over configuration” mean?
+46. What annotation would you use for Spring Boot apps? What does it do behind the
+scenes?
+47. How does Boot’s autoconfiguration work?
+48. What is the advantage of having an embedded Tomcat server?
+49. What is the significance of the Spring Boot starter POM?
+50. What is the Spring Boot actuator? What information can it give you?
+51. What files would you use to configure Spring Boot applications?
+52. What is the benefit of using Spring Boot profiles?
+
+
+
+
+
+
+
+
+
+Web Services
+HTTP
+1. What is a “web service”? What’s the advantage of distributing software as a web
+service?
+2. What’s the difference between REST and SOAP services?
+3. What does HTTP stand for?
+4. What are the components inside of an HTTP request? What about an HTTP response?
+5. What are the important HTTP verbs / methods and what do they do?
+a. Which are idempotent?
+b. Which are safe?
+6. List the levels of HTTP status codes and what they mean
+7. What are some specific HTTP status codes that are commonly used?
+8. What is service-oriented architecture (SOA)?
+9. How can you achieve loose coupling with SOA?
+10. What is an Enterprise Service Bus (ESB)?
+11. What are some best practices when creating web services?
+
+
+
+
+
+
+
+
+
+
+SOAP
+12. What does the acronym SOAP stand for?
+13. What protocols and data format do SOAP services use?
+14. What is the “contract” for a SOAP service?
+15. What’s the structure of a SOAP message?
+16. What are the SOAP messaging modes? Messaging Exchange Patterns?
+17. Are SOAP messages delivered with GET or POST requests?
+
+
+
+
+
+
+
+
+
+
+REST
+18. What does the acronym REST stand for? What makes a service “RESTful”?
+19. What protocols and data format do REST services use?
+20. What are the architectural constraints of REST?
+21. Explain the levels of the Richardson Maturity Model
+22. Explain the HATEOAS concept
+23. What is a “resource” in a REST service?
+24. What does the “uniform interface” constraint mean? Give an example of some RESTful
+endpoints you would create for an API. Should the URLs contain nouns, verbs, or
+adjectives?
+25. How would you implement authentication/authorization in a RESTful web service while
+maintaining statelessness?
+Microservices
+1. Compare the microservice and monolithic architectures. What are the advantages /
+disadvantages of each?
+2. Can a Java microservice communicate with a Node.js microservice? Why or why not?
+3. What’s the difference between horizontal and vertical scalability? Which way do
+monoliths and microservices typically scale?
+4. What are some best practices for building microservices?
+5. What is a messaging queue and how is using one different from calling service APIs
+directly?
+6. What is a “replica”?
+7. Explain the Netflix OSS stack for microservices (Eureka, Zuul, Hystrix)
+8. How would you setup and configure Eureka? Zuul? Hystrix?
+9. What is the purpose of an API gateway and how does Zuul perform this?
+10. What is service discovery and how does Eureka do this?
+11. What is the circuit breaker pattern and how does Hystrix implement it? What are the
+different circuit states?
+12. Is there any order in which you need to spin up these services?
+13. One of my microservices is throwing a TransportException! What might be the problem?
+
+
+
+
+
+
+
+
+Docker
+14. What is containerization?
+15. How are containers different from virtual machines?
+16. What is a Docker image? container?
+17. List the steps to create a Docker image and spin up a container
+18. What is the relevance of the Dockerfile to this process? List some keywords in the
+
+
+
+
+
+
+
+Dockerfile
+19. What is the benefit to an image being built in Layers?
+20. What are some other Docker commands?
+21. What is a container registry? How would you retrieve and upload images to DockerHub?
+22. What is Docker compose and why is it useful?
+23. If you want to store state for a container, how does Docker recommend doing that?
+
+
+
+
+
+
+
+
+Misc/Other
+Git
+1. What is version control? What makes git different from other version control software?
+2. List the git commands you know and what they do
+3. How would you prevent a file from being tracked by git?
+4. What is a branch? What are some common branching strategies?
+5. What is a merge conflict? How do you prevent these and resolve if it happens?
+6. What is a GitHub pull request?
+7. What is the git workflow for editing code and saving changes?
+8. What is a commit?
+9. How would you go back in your commit history if you make a mistake?
+
+
+
+
+
+
+
+
+
+SDLC
+1. What are the steps in the software development lifecycle?
+2. What is the difference between Waterfall and Agile methodologies? Explain the benefits
+and drawbacks of each
+3. List some of the principles declared in the Agile manifesto
+4. What specific Agile frameworks exist? What are the main features of each?
+5. What is the Scrum process? Explain each of the Scrum ceremonies
+6. How long is a typical sprint?
+7. What is a “standup” and what should you report about your work?
+8. What is the role of a “Scrum master” in a project? What about the “Product owner”?
+9. Explain the following metrics/charts: sprint velocity, burndown chart
+10. What is a Scrum board? Have you used any software tools for your team’s Scrum
+board?

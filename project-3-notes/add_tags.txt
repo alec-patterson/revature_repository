@@ -1,0 +1,12 @@
+	@Override
+	@Transactional
+	public Quiz makeQuizTags(Quiz quiz) {
+		Quiz q = qDao.findById(quiz.getId()).get();
+		q.getTags().addAll(quiz.getTags());
+		qDao.save(q);
+		return qDao.findById(quiz.getId()).get();
+	}
+	
+	public List<Tags> getTags(Quiz quiz) {
+		return (qDao.findById(quiz.getId())).get().getTags();
+	}
